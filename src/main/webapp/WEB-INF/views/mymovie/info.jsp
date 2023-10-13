@@ -313,7 +313,7 @@
       
       function viewMovieDetails(movie_id) {
     	    
-    	    const movieDetailURL = `/mymovie/detail?movie_id=${movie_id}`;
+    	    const movieDetailURL = `/movie/mymovie/detail?movie_id=${movie_id}`;
     	    window.location.href = movieDetailURL;
     	  }
 
