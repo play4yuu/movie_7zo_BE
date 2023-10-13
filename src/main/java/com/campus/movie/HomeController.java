@@ -19,10 +19,11 @@ public class HomeController {
 	public String home( Model model) {		
 		return "home";
 	}
-	@RequestMapping(value = "/mymovie/info", method = RequestMethod.GET)
-	public String mymovieInfo( Model model) {		
-		return "mymovie/info";
-	}
+
+	/*
+	 * @RequestMapping(value = "/mymovie/info", method = RequestMethod.GET) public
+	 * String mymovieInfo( Model model) { return "mymovie/info"; }
+	 */
 	@RequestMapping(value = "/mymovie/detail", method = RequestMethod.GET)
 	public String mymovieDetail( Model model) {		
 		return "mymovie/detail";

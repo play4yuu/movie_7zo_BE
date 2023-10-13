@@ -360,6 +360,7 @@
         });
         //input 박스를 날짜 선택이 가능한 기능으로 설정하기
       });
+      
     </script>
     
      <div id="movie_detail_main">
@@ -368,7 +369,7 @@
           <div class="img_insert"></div>
         </div>
         <div id="exp_wrap">
-          <div id="movie_detail_top_explain">
+          <div id="movie_detail_top_explain">          
             <div class="top_title">오펜하이머</div>
             <div class="explain_wrap">
               <div>감독: 크리스토퍼 놀란</div>

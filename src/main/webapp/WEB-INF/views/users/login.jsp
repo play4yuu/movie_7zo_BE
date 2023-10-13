@@ -49,7 +49,7 @@
 
 <div id="login"> 
 	<h1>로그인 폼</h1>
-	<form method="post" action="${pageContext.servletContext.contextPath}/users/loginOk" onsubmit="return loginCheck()">
+	<form method="post" action="${pageContext.servletContext.contextPath}/home" onsubmit="return loginCheck()">
 		<ul id="logfrm">
 			<li><input type="text" name="userid" id="userid" placeholder="아이디()" 
 			minlength="5" maxlength="15"/></li>

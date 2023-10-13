@@ -9,4 +9,5 @@ import com.campus.movie.service.TheaterService;
 public class TheaterController {
 	@Autowired
 	TheaterService service;
+	
 }
