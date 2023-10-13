@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.net.http.HttpClient;
 
 @Controller
 public class UserController {
@@ -26,6 +25,8 @@ public class UserController {
     // 4.아이디중복검사, 닉네임중복검사
     // 5. 로그아웃
 
+    // ------------------------------------------------
+
     //1. 회원가입
     @GetMapping("/join")
     public String insertUser() {
@@ -36,6 +37,8 @@ public class UserController {
     @PostMapping("/joinChk")
     public ModelAndView joinChk(UserVO vo, HttpSession session) {
         ModelAndView mv = new ModelAndView();
+
+
         System.out.println("회원가입 실행중...");
 
         return mv;
@@ -76,9 +79,7 @@ public class UserController {
             System.out.println("ERROR : " + e.getMessage());
             e.printStackTrace();
         }
-
         return mv;
-
     }
 
     //3. ID/PW 찾기

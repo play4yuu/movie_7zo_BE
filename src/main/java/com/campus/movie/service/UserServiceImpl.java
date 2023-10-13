@@ -37,4 +37,9 @@ public class UserServiceImpl implements UserService {
     public String findPw(String name, String phone, String email) {
         return mapper.findPw(name, phone, email);
     }
+
+    @Override
+    public UserVO join(String id, String pw, String nickname, String name, String phone, String email) {
+        return mapper.join(id, pw, nickname, name, phone, email);
+    }
 }

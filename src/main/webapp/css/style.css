@@ -1,12 +1,15 @@
-@import url("/movie/css/reset.css");
-@import url("/movie/css/root.css");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-/* @import url("//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"); */
 
-@import url("/movie/css/header_footer.css");
-@import url("/movie/css/join.css");
-@import url("/movie/css/search.css");
-@import url("/movie/css/ticket_comp.css");
+@import url("reset.css");
+@import url("root.css");
+@import url("header_footer.css");
+@import url("join.css");
+@import url("search.css");
+@import url("ticket_comp.css");
+@import url("css.css");
+
+@import url("theaterhome.css");
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 body {
   display: flex;
@@ -245,4 +248,5 @@ a {
   background-color: rgba(192, 0, 0, 0.1);
   margin: 10px;
 }
+
 

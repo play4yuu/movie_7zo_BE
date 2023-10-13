@@ -92,9 +92,8 @@
       alert("아이디는 영문 대소문자와 숫자 4~12자리로 입력해야합니다.");
       return;
     }
-    
     console.log ("아이디 체크 실행...");
-    window.open("/users/idchk?id=" + input_id, "", "width=400, height=300");
+    window.open("idchk?id=" + input_id, "", "width=400, height=300");
     
   });
   
