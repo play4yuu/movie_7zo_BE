@@ -1,0 +1,110 @@
+@import url("variables.css");
+
+/* 게시물 전체에 적용되는 스타일 */
+
+.discussion-board {
+  display: flex;
+  flex-direction: column;
+  /*자식 요소들을 세로 배치*/
+  flex-wrap: wrap;
+  justify-content: center;
+  /* 중앙 정렬 추가 */
+}
+
+.title {
+  text-align: left;
+  /* 좌측 정렬을 위해 추가 */
+}
+
+.post {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+/* 썸네일 이미지 스타일 */
+.post img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* 토론 주제 스타일 */
+.post h2 {
+  font-size: 1.5em;
+  margin: 0;
+  color: #333;
+}
+
+/* 내용 스타일 */
+.post p {
+  font-size: 1em;
+  color: #666;
+}
+
+/* 검색창 스타일 */
+.search-bar {
+  float: right;
+  margin-top: 10px;
+  height: 30px; /* 높이를 조정할 값으로 변경 */
+  width: auto; /* 너비를 자동으로 조절 */
+  display: flex; /* 내부 요소들을 가로로 정렬하기 위해 추가 */
+  align-items: center; /* 내부 요소를 수직 가운데 정렬하기 위해 추가 */
+}
+
+#search-input {
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+/* 검색 버튼 스타일 */
+#search-button {
+  background-color: var(--gray-darker);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: var(--point-color);
+}
+
+/* 게시글 등록 버튼 스타일 */
+.button-container {
+  float: right;
+  margin-top: 0px;
+}
+
+#add-post-button {
+  background-color: var(--gray-darker); /* 배경색 설정 */
+  color: #fff; /* 텍스트 색상 설정 */
+  padding: 10px 20px; /* 패딩 설정 (위아래 10px, 좌우 20px) */
+  border: none; /* 테두리 없애기 */
+  border-radius: 5px; /* 버튼 모서리를 둥글게 만들기 */
+  cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+}
+
+#add-post-button:hover {
+  background-color: var(--point-color);
+}
+
+.post > h2:first-child {
+  font-size: 16px;
+}
+
+.post > h2:nth-child(2) {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.post > p {
+  line-height: 1.4;
+}

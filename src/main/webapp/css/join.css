@@ -1,0 +1,124 @@
+.join__hr {
+  /* background-color: var(--gray-darker); */
+  height: 1px;
+  border: 1px;
+  margin-bottom: 15px;
+}
+
+.join__subtitle {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#join__wrap {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  position: relative;
+}
+
+.join__form-group {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 500px;
+  height: 60px;
+}
+
+.join__form-label {
+  width: 120px;
+  text-align: center;
+}
+
+.join__forminsert {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 250px;
+}
+
+.join__form-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 7px 10px 7px 10px;
+
+  width: 200px;
+  height: 15px;
+
+  /* margin: 10px; */
+
+  border: var(--gray-darker) 1px solid;
+  border-radius: 7px;
+
+  font-size: 12px;
+}
+
+#join__form_id {
+  padding: 5px 10px 5px 10px;
+
+  height: 30px;
+  width: 220px;
+
+  /* margin-left: 10px; */
+}
+
+.form_button-m {
+  width: 120px;
+  height: 40px;
+
+  margin: 30px 0px;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: var(--gray-darker);
+
+  color: white;
+  font-size: 14px;
+}
+
+.join__formeail-wrap {
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 250px;
+}
+
+.join__form-email {
+  width: 75px;
+  margin: 0px;
+}
+
+.join__email-at {
+  margin: 0px 5px;
+}
+
+#join__wrap > div:nth-child(11) > form {
+  display: flex;
+}
+
+#join__wrap > div.main__boxofficeTitle {
+  margin-bottom: 20px;
+}
+
+#auto_string {
+  display: flex;
+  width: 100px;
+  height: 30px;
+
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}

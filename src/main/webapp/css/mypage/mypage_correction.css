@@ -1,0 +1,80 @@
+@import url("variables.css");
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.inFor {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  /* padding: 10px 0; */
+}
+
+.logFrm {
+  display: flex;
+  padding: 10px 0;
+  width: 500px;
+}
+
+.title_content {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 30px;
+}
+
+.txtfield {
+  flex: 1;
+  width: 100px;
+  height: 10px;
+  font-size: 13px;
+  padding: 10px;
+  border: 1px solid;
+  color: rgb(192, 192, 192);
+}
+
+.button {
+  padding: 8px 16px;
+  background-color: var(--gray-darker);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: var(--point-color);
+}
+
+.buttons {
+  margin-top: 20px; /* 버튼들의 위 여백을 조절 */
+  text-align: center; /* 버튼들을 가운데 정렬 */
+}
+
+.buttons input {
+  margin: 0 auto; /* 버튼들을 수평 가운데 정렬 */
+}
+
+.delet {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 70px;
+  padding: 10px 0;
+  margin-top: 10px;
+}
+
+.correction-title {
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  margin: 10px 0;
+}

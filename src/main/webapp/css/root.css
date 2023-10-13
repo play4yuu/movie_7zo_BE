@@ -1,0 +1,33 @@
+:root {
+  /* 색상 */
+  --while: #fff;
+  --black: #000;
+
+  --gray-darker: #404040;
+  --gray-light: #e0e0e0;
+
+  /* 폰트사이즈 */
+  --default-text-size: 16px;
+  --header-font-size: 24px;
+
+  /* 기본 사이즈들 */
+  --defalt-width: 1200px;
+  --defalt-padding: 20px;
+  --defalt-margin: 20px;
+
+  --icon-s: 16px;
+  --icon-m: 24px;
+  --icon-l: 32px;
+
+  --point-color: #5d16a2;
+  --sunday-text: rgb(192, 0, 0);
+  --saturday-text: rgb(0, 0, 192);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}

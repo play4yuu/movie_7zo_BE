@@ -1,0 +1,169 @@
+#booking_comp_con {
+  /* align-items: center; */
+  justify-content: center;
+  flex-direction: column;
+}
+
+#complete__ticket__con {
+  display: flex;
+  flex-direction: row;
+
+  width: 700px;
+  align-items: center;
+  justify-content: center;
+}
+
+#comp__left,
+#comp__right {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+}
+
+#comp__left {
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  background-color: rgb(92, 92, 92);
+  color: white;
+
+  border-radius: 15px 0px 0px 15px;
+  border-width: 3px;
+  position: relative;
+}
+
+#comp__right {
+  width: 70%;
+  background-color: var(--gray-darker);
+  font-size: 15px;
+  color: white;
+
+  border-radius: 0px 15px 15px 0px;
+}
+
+/* 티켓 왼쪽 */
+#comp__left__text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.comp__left__text__numText {
+  width: 100%;
+  text-align: center;
+  font-weight: bolder;
+
+  display: block;
+  margin: 3px 0px;
+}
+
+#comp__left__poster {
+  display: flex;
+  margin: 10px 0px;
+}
+
+/* 포스터넣는거 */
+#comp__left__poster__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 160px;
+
+  background-color: rgba(192, 0, 0, 0.1);
+  background-image: url("https://i.namu.wiki/i/pMVIi7MS6YW04Gxkx-OGH1_PE5T7O4G5ti4N-INH0eMVplAAk6cxGSiHkn0-GfSKfC1nMTR40VmE6f7z8TQGvFX-Hf3_0RzMgIeh7XvW-MKmO9FvQGhYB1GhnouNSj45C76zxgKRCP5ByesV6q8_DQ.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  box-shadow: rgb(0, 0, 0, 0.3) 0px 0px 15px 00px;
+}
+
+/* 티켓 오른쪽 */
+#comp__right__title {
+  display: flex;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.comp__hr {
+  margin: 13px 0px;
+}
+
+#comp__right__wrap {
+  display: flex;
+  flex-direction: column;
+
+  margin: 10px 30px;
+}
+
+.comp__light_text_wrap {
+  line-height: 1.45;
+  overflow: hidden;
+}
+
+.comp__right__text__left {
+  display: inline-block;
+  width: 140px;
+}
+
+.comp__dot_top,
+.comp__dot_down {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+
+  background-color: white;
+  border-radius: 50%;
+  right: -16px;
+}
+
+.comp__dot_top {
+  top: -17px;
+}
+.comp__dot_down {
+  bottom: -17px;
+}
+
+#comp__btn-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 50px 0px 70px 0px;
+
+  width: 240px;
+
+  align-items: center;
+}
+
+.comp__btn {
+  width: 100px;
+  height: 40px;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: var(--gray-light);
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#comp__btn_list {
+  background-color: rgb(92, 92, 92);
+  color: white;
+}
+
+#comp__btn_list > a {
+  color: white;
+}
+
+/* 마이페이지쪽 관련 */
+#mypage_ticket_con_wrap > #complete__ticket__con {
+  margin-bottom: 15px;
+  margin: auto;
+}
+
+#complete__ticket__con > #comp__right {
+  justify-content: center;
+}

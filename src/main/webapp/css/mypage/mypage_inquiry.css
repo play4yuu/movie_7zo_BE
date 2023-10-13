@@ -1,0 +1,178 @@
+@import url("variables.css");
+
+.faq {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  margin: 10px 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  background-color: #f5f5f5;
+}
+
+.question {
+  font-size: 20px;
+  font-weight: bold;
+
+  position: relative;
+}
+
+.answer {
+  display: none;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: var(--gray-light);
+  padding: 10px; /* 내용 주위에 여백 추가 */
+  margin-top: 10px; /* 위쪽 여백 추가 */
+  font-size: 16px; /* 글자 크기 조절 */
+  line-height: 1.5; /* 줄 간격 조절 */
+}
+
+/*나의 1대1 문의 게시판 디자인*/
+
+.myqna {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+
+.question-list {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);*/
+}
+.myqna .question {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
+}
+.myqna .question-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.myqna .question-content {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.myqna .question-date {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.myqna .answer-status {
+  font-style: italic;
+  color: var(--point-color);
+
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+}
+
+/* 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /* 중앙 정렬 스타일 */
+
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  border-radius: 10px; /* 모서리 둥글게 설정 */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 80%; /* 모달 창의 최대 너비를 설정합니다. */
+  height: auto; /* 내용의 높이를 자동으로 조절하도록 설정합니다. */
+  overflow-y: auto; /* 내용이 모달보다 큰 경우 스크롤바를 추가합니다. */
+  flex-direction: column; /* 세로 정렬을 위해 컬럼 방향으로 설정 */
+  align-items: center; /* 요소를 가운데 정렬 */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 텍스트 영역에 추가 스타일 설정 */
+textarea {
+  height: 150px;
+}
+
+#sendBtn,
+#openModalBtn {
+  padding: 10px 20px;
+  background-color: var(--gray-darker);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+
+#sendBtn:hover,
+#openModalBtn:hover {
+  background-color: var(--point-color);
+}
+
+hr {
+  border-style: dotted;
+  border-width: 1px;
+  border-color: #ccc;
+  margin: 20px 0; /* 위아래 여백 설정 */
+  width: 100%;
+}
+
+.Q::before {
+  content: "Q"; /* 텍스트 "Q. "을 콘텐츠로 추가 */
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--point-color);
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.txtfield {
+  border-radius: 5px;
+}
+
+.at {
+  display: flex;
+  margin: 6px 5px;
+}
