@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  	<meta charset="UTF-8">
-    <title>토론 페이지</title>
+    <meta charset="UTF-8">
+    <title>영화가영화악</title>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
-     <link rel="stylesheet" href="/movie/css/css.css"  type="text/css" />
-    <link rel="stylesheet" href="/movie/css/style.css" type="text/css" />
- </head>
+    <link rel="stylesheet" href="<c:url value="/css/style.css"/>" type="text/css" />
+  </head>
   <body>
     <!-- 헤더시작 -->
     <header id="header">
@@ -18,7 +17,7 @@
         <div class="header__icon">
           <span class="material-icons" id="header__icon__menu"> menu </span>
         </div>
-
+        
         <!-- 헤더 큰 카테고리 -->
         <div id="gnb" class="">
           <div id="header_gnb_bar" class=""></div>
@@ -70,44 +69,67 @@
             </li>
           </ul>
         </div>
-
+        
         <!-- 가운데로고부분 -->
         <h1 class="main_logo">
           <a
-            class="main_logo__a"
-            href="/movie/"
-            title="메인으로 가기"
-            alt="LOGO"
+                  class="main_logo__a"
+                  href="/movie/"
+                  title="메인으로 가기"
+                  alt="LOGO"
           >
             <span class="material-icons" id="main__logo"> movie_creation </span>
           </a>
         </h1>
-
+        
+        <%--        헤더에 우상단--%>
+        
+        <%-- 비로그인: 로그인, 회원가입 // 로그인 : 로그아웃, 마이페이지 --%>
         <div class="header__login">
-          <button class="header__login-btn" id="login_user">로그인</button>
-          <button class="header__login-btn" id="create_user">
-            <a href="/movie/users/join"> 회원가입 </a>
-          </button>
-          <button class="header__login-btn" id="header__logout_user">
-            <a href="../../index.html"> 로그아웃 </a>
-          </button>
-          <button class="header__login-btn" id="header__mypage">
-            <a href="../MYPAGE/movie_main.html"> 마이페이지 </a>
-          </button>
-          <span id="header__login__icon">
-            <a href="../../index.html">
-              <span></span>
-            </a>
-          </span>
+          
+          <c:if test="${empty sessionScope.id}">
+            <button class="header__login-btn" id="login_user">로그인</button>
+            <button class="header__login-btn" id="create_user">
+              <a href="/movie/users/join"> 회원가입 </a>
+            </button>
+          </c:if>
+          
+          <c:if test="${not empty sessionScope.id}">
+            <button class="header__login-btn" id="header__logout_user">
+              <a href="/movie/users/logout"> 로그아웃 </a>
+            </button>
+            
+            <button class="header__login-btn" id="header__mypage">
+              <a href="/movie/mypage/movie_main"> 마이페이지 </a>
+            </button>
+          </c:if>
+          
+          <%--
+					<button class="header__login-btn" id="header__logout_user">
+					  <a href="/logout"> 로그아웃 </a>
+					</button>
+					
+					<button class="header__login-btn" id="header__mypage">
+					  <a href="/mypage/movie_main"> 마이페이지 </a>
+					</button>
+					
+					<span id="header__login__icon">
+					  <a href="/movie/">
+						<span></span>
+					  </a>
+					</span>
+		   --%>
+        
+        
         </div>
       </div>
     </header>
-
+    
     <!-- ★★★헤더/사이트맵부분 -->
     <div id="main__sitemap">
       <div id="main__sitemap__wrap">
         <span class="main__sitemap__title">SITE MAP</span>
-
+        
         <div class="main__sitemap__list">
           <ul class="main__sitemap__list__wrap">
             <p>
@@ -118,13 +140,13 @@
             <li><a href="../MOVIE/search.html"> 검색 </a></li>
             <li><a href="../DEBATE/home.html"> 토론 </a></li>
           </ul>
-
+          
           <ul class="main__sitemap__list__wrap">
             <p><a href="../TICKETING/home.html"> 예매 </a></p>
             <li><a href="../TICKETING/home.html"> 영화별 예매 </a></li>
             <li><a href="../THEATER/schedule.html"> 상영스케쥴 </a></li>
           </ul>
-
+          
           <ul class="main__sitemap__list__wrap">
             <p>
               <a href="../THEATER/home.html"> 극장 </a>
@@ -132,14 +154,14 @@
             <li><a href="../THEATER/home.html"> 극장 정보 </a></li>
             <li><a href="../THEATER/schedule.html"> 상영 스케쥴 </a></li>
           </ul>
-
+          
           <ul class="main__sitemap__list__wrap">
             <p>특전교환</p>
             <li><a href="../EXCHANGE/list.html"> 특전교환 </a></li>
             <li><a href="../EXCHANGE/list.html"> 특전교환 홈 </a></li>
             <li><a href="../MYPAGE/movie_main.html"> 내 특전교환 </a></li>
           </ul>
-
+          
           <ul class="main__sitemap__list__wrap">
             <p><a href="../MYPAGE/movie_main.html"> 마이페이지 </a></p>
             <li><a href="../MYPAGE/movie_main.html"> 나의 정보 </a></li>
@@ -151,8 +173,8 @@
         </div>
       </div>
     </div>
-
-    <!-- ★★★로그인 모달 부분 -->
+    
+    <!-- === 로그인 모달 부분 === -->
     <div id="main__backarea" class="hidden"></div>
     <div id="login__dialog-form" class="hidden" title="Login">
       <p class="login_tip-text"></p>
@@ -162,39 +184,39 @@
           <span class="material-icons"> close </span>
         </button>
       </div>
-      <form id="login_modal">
-        <fieldset>
-          <label for="id">아이디</label>
-          <input
-            type="text"
-            name="login_id"
-            id="login_id"
-            class="login-input-input"
-            required
-            minlength="4"
-            maxlength="12"
-          />
-          <label for="password">비밀번호</label>
-          <input
-            type="password"
-            name="login_password"
-            id="login_password"
-            class="login-input-input"
-            required
-            minlength="6"
-            maxlength="12"
-          />
-        </fieldset>
-
-        <button id="login-modal_login-btn">로그인</button>
+      
+      <form id="login_modal" method="post" action="<c:url value="/loginchk"/>">
+        
+        <label for="login_id">아이디</label>
+        <input
+                type="text"
+                name="id"
+                id="login_id"
+                class="login-input-input"
+                required
+                minlength="4"
+                maxlength="12"
+        />
+        <label for="login_password">비밀번호</label>
+        <input
+                type="password"
+                name="pw"
+                id="login_password"
+                class="login-input-input"
+                required
+                minlength="6"
+                maxlength="12"
+        />
+        
+        <button type="submit" id="login-modal_login-btn">로그인</button>
       </form>
-
+      
       <div id="login-modal__btn-atsume">
         <button class="login-modal__btn" id="login-modal__login-btn">
-          <a href="../search.html"> ID/PW찾기 </a>
+          <a href="/search"> ID/PW찾기 </a>
         </button>
         <button class="login-modal__btn" id="login-modal__join-btn">
-          <a href="../join.html"> 회원가입 </a>
+          <a href="/join"> 회원가입 </a>
         </button>
       </div>
     </div>
