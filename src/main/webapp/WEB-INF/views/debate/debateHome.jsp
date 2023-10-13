@@ -412,7 +412,7 @@
         document.getElementById("message").value = "";
       }
 
-      // Enter 키 이벤트 처리
+      // Enter 키 이벤트 처리 ..
       document
         .getElementById("message")
         .addEventListener("keyup", function (event) {
