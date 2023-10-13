@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<head>
+    <!-- Roboto 폰트를 불러옵니다 -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
  <style>
       @import url("/movie/css/reset.css");
       /* CSS 스타일링 */
@@ -236,188 +240,59 @@
         position: absolute;
         bottom: 15px;
         right: 15px;
-      }
+      	}
+      .poster-container {
+	    display: flex;
+	    justify-content: center;
+		}
+		
+		.poster-container a img {
+		    width: 200px; /* 원하는 이미지 크기로 조절하세요 */
+		    margin: 0 10px; /* 사진 사이의 간격을 조절하세요 */
+		}
+		.content-wrapper {
+		    display: flex;
+		    flex-direction: column;
+		}
+		
+		.debate-box {
+		    border: 1px solid #000; /* 테두리 추가 */
+		    padding: 20px; /* 내부 여백 추가 */
+		    box-shadow: 0px 0px 10px rgba(0,0,0,0.5); /* 그림자 효과 추가 */
+		    margin-top: 20px; /* 포스터와의 간격 조정 */
+		    background-color: #f9f9f9; /* 배경색 설정 */
+		    border-radius: 10px; /* 모서리 둥글게 설정 */
+		
+		    font-family: 'Roboto', sans-serif; /* Roboto 폰트 적용 */
+		}
+		
+		.debate-box:hover {
+		    background-color: #e6e6e6; /* 마우스 오버 시 배경색 변경 */
+		}
+		
     </style>
-    
-     <div id="debate__con">
-      <div class="discussion-container">
-        <div id="discussion_con_left">
-          <h1>토론을 시작하시겠습니까?</h1>
-          <ul class="debate_rule">
-            <li>(1) 기본적인 예의에 어긋난 행위 금지</li>
-            <li>(2) 커뮤니티의 존립 목적에 반하는 활동 금지</li>
-            <li>(3) 아이디 도용 금지</li>
-            <li>(4) 닉네임의 사용 제한</li>
-            <li>
-              (5) 커뮤니티내 게시글 및 답글(댓글)은 자유 공유가 원칙 입니다
-            </li>
-            <li>(6) 불편신고</li>
-            <li>(7) 개선 및 건의 등의 의견</li>
-          </ul>
-        </div>
-
-        <div id="discussion_con_right">
-          <!-- 토론 주제 선택 목록 -->
-          <ul id="discussion-list">
-            <table id="debate_table">
-              <tr>
-                <th>
-                  <a href="javascript:void(0);" onclick="">토론방 입장하기</a>
-                </th>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#" onclick="startDiscussion('토론 주제 1')"
-                    >토론주제 1입니다</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#" onclick="startDiscussion('토론 주제 2')"
-                    >토론주제 2입니다</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#" onclick="startDiscussion('토론 주제 3')"
-                    >토론주제 3입니다</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#" onclick="startDiscussion('토론 주제 4')"
-                    >토론주제 4입니다</a
-                  >
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <a href="#" onclick="startDiscussion('토론 주제 5')"
-                    >토론주제 5입니다</a
-                  >
-                </td>
-              </tr>
-            </table>
-          </ul>
-        </div>
-      </div>
+    <div id="debate__con">
+    <div class="discussion-container">
+        <div class="content-wrapper">
+        <div class="poster-container">            
+            <a href="/movie/mymovie/info"><img src="https://i.namu.wiki/i/hz5-kuVYAEqnj46RNvVK2OFcQHQzNc67vSfqE4OKQizW50v8csQhrkdj3T_utgVKXlUEZ9V-LR6DxxW9C2a4rHaVP99hVT4ldQV3tqAHEva-FCvjjpnKZ9PaMFG4KNFkDqQohAWK-Nx2qqaVUu6xFg.webp" alt="Movie Poster 1"></a>
+            <a href="/movie/mymovie/info"><img src="https://i.namu.wiki/i/52JBfEKj84CDL3wtmRIOPZ1X5orfdHrGltTTQFNhhvCDcoXUuPt9nnlKYtNN3m85MewKGJv-vWmacJ7eRAaZow8dWD5ZqJ6kvSum7VtpldCXh4CHEkJeSiYgTk9YnW10rdw51L3e8PidHaVrDJuvCw.webp" alt="Movie Poster 2"></a>
+            <a href="/movie/mymovie/info"><img src="https://i.namu.wiki/i/F7PxSV7KU2lgRCKTx58c8KLcuCUcKTt0dZj7MxMi9CkGDqFNDm_pYVn8jl1kNbj2xBeCZb96QUfDhEAzlsTX-FWRYwt3yA7g1LJ8p3VkCIr6hA292geB0fhnKKMdNusHMGmxYxXEIVrZ75rnkhlWhQ.webp" alt="Movie Poster 3"></a>
+            <a href="/movie/mymovie/info"><img src="https://i.namu.wiki/i/3uUcr8vaVKjBz8zCEPZU1I4F_4rjlXO6l0bbt95tUDSbiWXfFA8rpaD4PFx4WU-sCzJx8vQTOIDJ8mRZ2MzJ5KKqeQw1Y6250HM_0IohNEtLApmFrpvRKqjQ2l2pXVwzKT2Ll1Mvz-TleXrtPOQG7Q.webp" alt="Movie Poster 4"></a>
+            </div>                       
+		
+		    <div class="debate-box">
+		        <a href="/movie/debate/debate?topic=토론주제1">1. 그대들은 어떻게 살것인가 - 토론 주제 1</a>
+		    </div>
+		    <div class="debate-box">
+		        <a href="/movie/debate/debate?topic=토론주제2">2. 모노노케 히메 - 토론 주제 2</a>
+		    </div>
+		    <div class="debate-box">
+		        <a href="/movie/debate/debate?topic=토론주제3">3. 엘리멘탈 - 토론 주제 3</a>
+		    </div>
+		    <div class="debate-box">
+		        <a href="/movie/debate/debate?topic=토론주제4">4. 잠 - 토론 주제 4</a>
+		    </div>
     </div>
-
-    <div class="chat-container" id="chat-container" style="display: none">
-      <div class="chat-box" id="chat-box">
-        <!-- 채팅 내용 -->
-      </div>
-      <input
-        type="text"
-        id="message"
-        placeholder="메시지를 입력하세요"
-        class="message-input"
-      />
-      <button id="debate_btn_submit" onclick="sendMessage()">전송</button>
-
-      <!-- 선택 사항 (찬성 또는 반대 선택) -->
-      <select id="user-type" class="positive">
-        <option value="positive" class="positive">찬성</option>
-        <option value="negative" class="negative">반대</option>
-      </select>
-
-      <!-- 뒤로 가기 버튼을 chat-container 내부에 추가 -->
-      <button id="back-button" onclick="goBack()" style="display: none">
-        뒤로 가기
-      </button>
-    </div>
-
-    <script>
-      // startDiscussion 메시지가 한 번만 뜨도록 설정
-      var discussionStarted = false;
-
-      // 토론 주제를 클릭하여 해당 토론의 채팅 창을 엽니다.
-      function startDiscussion(topic) {
-        var chatBox = document.getElementById("chat-box");
-
-        // startDiscussion 메시지가 아직 한 번도 뜨지 않은 경우에만 실행
-        if (!discussionStarted) {
-          chatBox.innerHTML = "<p>토론 주제: " + topic + "</p>";
-          discussionStarted = true;
-
-          // "뒤로 가기" 버튼을 표시
-          document.getElementById("back-button").style.display = "block";
-
-          // "토론방 입장하기" 클릭 시 "discussion-list"를 숨김
-          document.getElementById("discussion-list").style.display = "none";
-        }
-
-        // 채팅창을 보이게 설정
-        document.getElementById("chat-container").style.display = "block";
-
-        // 스크롤 위치를 맨 위로 설정 (startDiscussion 메시지가 고정됨)
-        chatBox.scrollTop = 0;
-
-        // 스크롤 이벤트 리스너 등록 (스크롤을 감지하여 startDiscussion 메시지가 고정 상태를 유지)
-        chatBox.addEventListener("scroll", handleScroll);
-      }
-
-      // "뒤로 가기" 버튼 클릭 시 토론 주제 선택 목록을 다시 표시
-      function goBack() {
-        // 채팅창을 숨김
-        document.getElementById("chat-container").style.display = "none";
-
-        // 토론 주제 선택 목록을 표시
-        document.getElementById("discussion-list").style.display = "block";
-
-        // "뒤로 가기" 버튼을 숨김
-        document.getElementById("back-button").style.display = "none";
-
-        // 토론 상태 초기화
-        discussionStarted = false;
-      }
-
-      // JavaScript 코드
-      function sendMessage() {
-        var message = document.getElementById("message").value;
-        var chatBox = document.getElementById("chat-box");
-        var userType = document.getElementById("user-type").value;
-        var username = "John"; // 사용자 이름 (나중에 DB에서 가져올 수 있음)
-
-        // 사용자 유형에 따른 스타일 클래스 추가
-        var userClass =
-          userType === "positive" ? "positive-message" : "negative-message";
-
-        // 현재 시간을 얻어옴
-        var currentTime = new Date();
-        var hours = currentTime.getHours();
-        var minutes = currentTime.getMinutes();
-        var timestamp = hours + ":" + (minutes < 10 ? "0" : "") + minutes;
-
-        // 새 메시지를 상단에 추가 (사용자 이름, 메시지, 시간 함께 표시)
-        chatBox.innerHTML =
-          '<p><span class="username">' +
-          username +
-          '</span>: <span class="message ' +
-          userClass +
-          '">' +
-          message +
-          '</span><span class="timestamp">' +
-          timestamp +
-          "</span></p>" +
-          chatBox.innerHTML;
-
-        // 스크롤 위치를 이전 위치로 복원
-        chatBox.scrollTop = chatBox.scrollHeight - chatBox.scrollTop;
-
-        // 입력 필드를 초기화
-        document.getElementById("message").value = "";
-      }
-
-      // Enter 키 이벤트 처리 ....
-      document
-        .getElementById("message")
-        .addEventListener("keyup", function (event) {
-          if (event.key === "Enter") {
-            sendMessage();
-          }
-        });
-    </script>
+</div>
+</div>

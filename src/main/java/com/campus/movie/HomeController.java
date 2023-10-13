@@ -35,6 +35,10 @@ public class HomeController {
 	public String debateDebateHome( Model model) {		
 		return "debate/debateHome";
 	}
+	@RequestMapping(value = "/debate/debate", method = RequestMethod.GET)
+	public String debateDebate( Model model) {		
+		return "debate/debate";
+	}
 	@RequestMapping(value = "/theater/schedule", method = RequestMethod.GET)
 	public String theaterSchedule( Model model) {		
 		return "theater/schedule";
