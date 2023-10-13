@@ -36,7 +36,7 @@
 <script>
 	function loginCheck(){
 		if(document.getElementById("userid").value==""){
-			alert("아이디를 입력후 로그인 하세요..");
+			alert("아이디를 입력후 로그인 하세요...");
 			return false;
 		}
 		if(document.getElementById("userpwd").value==""){
