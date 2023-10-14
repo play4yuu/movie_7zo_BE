@@ -57,7 +57,7 @@
     <!-- 이메일 -->
     <div class="join__input_wrap">
       <label class="join__form-label">이메일</label>
-    <input type="email" class="join__form-input" id="join__input_email" placeholder="test01@test.com" name="email"/>
+    <input type="email" class="join__form-input" id="join__input_email" placeholder="example@example.com" name="email"/>
     </div>
     
     <!-- 확인버튼 -->
@@ -99,12 +99,7 @@
   }
   
   function isEmail(asValue) {
-    var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
-    return regExp.test(asValue);
-  }
-  
-  function isDomain(asValue){
-    var regExp = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
+    var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$/;
     return regExp.test(asValue);
   }
   
@@ -154,10 +149,6 @@
   // ============= 회원가입 =============
   
   // 유효성검사
-  
-
-  
-  
   const join_submit_btn = document.querySelector("#join_submit_btn");
   join_submit_btn.addEventListener("click", function () {
     //유효성검사
@@ -167,8 +158,7 @@
     let input_name = document.getElementById("join__input_name").value;
     let input_phone = document.getElementById("join__input_phone").value;
     let input_nickname = document.getElementById("join__input_nickname").value;
-    let input_email_id = document.getElementById("join__input_email_id").value;
-    let input_email_domain = document.getElementById("join__input_email_domain").value;
+    let input_email = document.getElementById("join__input_email").value;
     
     if (input_id === "") {
       alert("아이디를 입력해주세요.");
@@ -203,18 +193,12 @@
     } else if (!isNickname(input_nickname)) {
       alert("닉네임은 한글, 영문, 숫자 2~10자리로 입력해야합니다.");
       return false;
-    } else if (input_email_id === "") {
+    } else if (input_email === "") {
       alert("이메일을 입력해주세요.");
       return false;
-    } else if (input_email_domain === "") {
-      alert("이메일을 입력해주세요.");
-      return false;
-    } else if (!isId(input_email_id)) {
-      alert("이메일의 아이디 부분이 올바르지 않습니다.");
-      return false;
-    } else if (!isDomain(input_email_domain)) {
-      alert("이메일의 도메인 부분이 올바르지 않습니다.");
-      return false;
+    } else if (!isEmail(input_email)) {
+      alert("이메일을 확인해 주세요");
+        return false;
     } else if ( document.getElementById("id_chk").value === "N") {
       alert("아이디 중복확인을 해주세요.");
       return false;

@@ -17,50 +17,34 @@
 </style>
 <%-------------------------------------------------%>
 
-<script>
-    $("input[value=사용하기]").click(function(){
-        opener.document.getElementById("userid").value='${id}';
-        opener.$("#id_chk").val("Y");
-        self.close();
-    });
-</script>
-
-
-<div>
-	<p> ${id} , ${result} </p>
-</div>
-
-<div id="idchk_wrap">
-	<h1> 아이디 중복검사
-	</h1>
+<div class="chk_wrap">
 	
-	<div>
-		
+	<div class="duplicate_title_wrap">
+		<h1 class="duplicate_title">
+			아이디 중복검사
+		</h1>
+	</div>
+	
+	<div class="chk_txt_wrap1">
 		<c:if test="${result == 0}">
-			<p>${id}는 사용할 수 있습니다 </p>
-			
-			<input type="button" value="사용하기" id="use_id_btn" />
-		
-		
+			<p class="duplicate_insert"><strong>${id}</strong>는 사용할 수 있습니다 </p>
+			<input type="button" value="사용하기" class="chk_form-button" id="use_id_btn" />
 		</c:if>
 		
 		<c:if test="${result == 1}">
-			<p>${id}는 사용할 수 없습니다 </p>
+			<p class="duplicate_insert"><strong>${id}</strong>는 사용할 수 없습니다 </p>
 		</c:if>
 		
-		<hr>
+		<%--	<hr class="duplicate_hr">--%>
 		
 		<div>
 			<form action="idchk" method="get" onsubmit="return check()">
 				<input type="text" name="id" id="input_id" />
-				<input type="submit" value="중복검사" id="input_id_chk_btn" />
+				<input type="submit" value="중복확인" id="input_id_chk_btn" class="chk_form-button" />
 			</form>
 		</div>
 		
-		
-		<input type="button" value="닫기" onclick="self.close()" />
-	
-	
+		<input type="button" value="닫기" class="chk_form-button"  onclick="self.close()" />
 	
 	</div>
 
@@ -77,26 +61,28 @@
     const input_id = document.getElementById("input_id");
     const btn = document.getElementById("input_id_chk_btn");
 
-    btn.addEventListener("click", function(){
-        if(!isId(input_id.value)){
+    function check() {
+        if (!isId(input_id.value)) {
             alert("아이디는 영문자, 숫자 4~12자리로 입력해주세요");
             input_id.focus();
             return false;
-        } else if (input_id.value === ""){
+        } else if (input_id.value === "") {
             alert("아이디를 입력해주세요");
             input_id.focus();
             return false;
         } else {
-			return true;
+            return true;
         }
-    });
-    
+    }
+
     const use_id_btn = document.getElementById("use_id_btn");
     use_id_btn.addEventListener("click", function(){
-		opener.document.getElementById("join__input_id").value='${id}';
-		opener.$("#id_chk").val("Y");
-		self.close();
-	});
- 
+        opener.document.getElementById("join__input_id").value='${id}';
+        opener.document.getElementById("join__input_id").readOnly=true;
+        opener.document.getElementById("join__input_id").style.backgroundColor="#e9ecef";
+        opener.$("#id_chk").val("Y");
+        self.close();
+    });
+
 
 </script>
