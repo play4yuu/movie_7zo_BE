@@ -55,10 +55,7 @@
     <!-- 이메일 -->
     <div class="join__input_wrap">
       <label class="join__form-label">이메일</label>
-      <input type="text" class="join__form-input join__form-email" id="join__input_email_id" placeholder="example" name="email_front" />
-      <p class="join__email-at">@</p>
-      <input type="text" class="join__form-input join__form-email" id="join__input_email_domain" placeholder="example.com" name="email_back" />
-    <input type="email" class="join__from-input" id="join__input_email" placeholder="test01@test.com" name="email"/>
+    <input type="email" class="join__form-input" id="join__input_email" placeholder="test01@test.com" name="email"/>
     </div>
     
     <!-- 확인버튼 -->
