@@ -13,6 +13,8 @@ public interface UserMapper {
     // 아이디 중복검사
     int idCheck(String id);
 
+    int nickChk(String nickname);
+
     //ID찾기 (필요정보 : 이름, 이메일 )
     String findId(String name, String email);
 

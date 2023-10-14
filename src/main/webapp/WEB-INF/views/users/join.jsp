@@ -14,9 +14,9 @@
   <!-- 회원가입폼  -->
   <form id="joinForm" class="join__form-group" method="post" action="joinChk">
     <!-- 아이디 -->
-    <label class="join__form-label">아이디</label>
     
     <div class="join__input_wrap">
+      <label class="join__form-label">아이디</label>
       <input type="text" class="join__form-input" placeholder="최소 4글자 최대 12글자 " id="join__input_id" name="id" minlength="4" maxlength="12" />
       <input type="button" class="join__form-button" id="join__input_id_check" value="중복확인" />
     </div>
@@ -58,19 +58,22 @@
       <input type="text" class="join__form-input join__form-email" id="join__input_email_id" placeholder="example" name="email_front" />
       <p class="join__email-at">@</p>
       <input type="text" class="join__form-input join__form-email" id="join__input_email_domain" placeholder="example.com" name="email_back" />
+    <input type="email" class="join__from-input" id="join__input_email" placeholder="test01@test.com" name="email"/>
     </div>
     
     <!-- 확인버튼 -->
-    <button type="submit" class="form_button-m" id="join__form-button">회원 가입하기</button>
+    <button type="button" class="form_button-m" id="join_submit_btn">회원 가입하기</button>
   </form>
   
   <hr width="600px" color="#999999" class="join__hr" />
 
 </div>
 
+<%------JS---------------------------------------------------------%>
+
 <script>
   // === ID중복검사 ===
-
+  
   //ID 유효성 검사
   function isId(asValue) {
     var regExp = /^[a-zA-Z0-9]{4,12}$/;
@@ -99,43 +102,138 @@
   
   
   // === 닉네임 중복검사 ===
+  //유효성검사
+  function isNickname(asValue) {
+    var regExp = /^[가-힣a-zA-Z0-9]{2,10}$/;
+    return regExp.test(asValue);
+  }
+  
+  // (2) 닉네임 중복체크
+  const nickname_chk_btn = document.querySelector("#join__input_nickname_check");
+  const nickname = document.getElementById("join__input_nickname")
+  
+  nickname_chk_btn.addEventListener("click", function () {
+    
+    let input_nickname = nickname.value;
+    console.log("입력 nickname : " + input_nickname);
+    
+    if (input_nickname === "") {
+      alert("닉네임을 입력해주세요.");
+      return;
+    } else if (!isNickname(input_nickname)) {
+      alert("닉네임은 한글, 영문, 숫자 2~10자리로 입력해야합니다.");
+      return;
+    }
+    console.log ("닉네임 체크 실행...");
+    window.open("nicknamechk?nickname=" + input_nickname, "", "width=400, height=300");
+    
+  });
+
 
 </script>
 
 <script>
-  // === 회원가입 ===
+  // ============= 회원가입 =============
   
   // 유효성검사
-    function isId(asValue) {
-        var regExp = /^[a-zA-Z0-9]{4,12}$/;
-        return regExp.test(asValue);
-    }
-    
-    function isPw(asValue) {
-        var regExp = /^[a-zA-Z0-9]{6,12}$/;
-        return regExp.test(asValue);
-    }
-    
-    function isName(asValue) {
-        var regExp = /^[가-힣]{2,17}$/;
-        return regExp.test(asValue);
-    }
-    
-    function isPhone(asValue) {
-        var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-        return regExp.test(asValue);
-    }
-    
-    function isNickname(asValue) {
-        var regExp = /^[가-힣a-zA-Z0-9]{2,10}$/;
-        return regExp.test(asValue);
-    }
-    
-    function isEmail(asValue) {
-        var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
-        return regExp.test(asValue);
-    }
-    
-    const join_submit_btn = document.querySelector("#join__form-button");
+  function isId(asValue) {
+    var regExp = /^[a-zA-Z0-9]{4,12}$/;
+    return regExp.test(asValue);
+  }
   
+  function isPw(asValue) {
+    var regExp = /^[a-zA-Z0-9]{6,12}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isName(asValue) {
+    var regExp = /^[가-힣]{2,17}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isPhone(asValue) {
+    var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isNickname(asValue) {
+    var regExp = /^[가-힣a-zA-Z0-9]{2,10}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isEmail(asValue) {
+    var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isDomain(asValue){
+    var regExp = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
+    return regExp.test(asValue);
+  }
+  
+  
+  const join_submit_btn = document.querySelector("#join_submit_btn");
+  join_submit_btn.addEventListener("click", function () {
+    //유효성검사
+    let input_id = document.getElementById("join__input_id").value;
+    let input_pw = document.getElementById("join__input_pw").value;
+    let input_pw_re = document.getElementById("join__input_pw_re").value;
+    let input_name = document.getElementById("join__input_name").value;
+    let input_phone = document.getElementById("join__input_phone").value;
+    let input_nickname = document.getElementById("join__input_nickname").value;
+    let input_email_id = document.getElementById("join__input_email_id").value;
+    let input_email_domain = document.getElementById("join__input_email_domain").value;
+    
+    if (input_id === "") {
+      alert("아이디를 입력해주세요.");
+      return false;
+    } else if (!isId(input_id)) {
+      alert("아이디는 영문 대소문자와 숫자 4~12자리로 입력해야합니다.");
+      return false;
+    } else if (input_pw === "" ) {
+      alert("비밀번호를 입력해주세요.");
+      return false;
+    } else if (!isPw(input_pw)) {
+      alert("비밀번호는 영문 대소문자와 숫자 6~12자리로 입력해야합니다.");
+      return false;
+    } else if (input_pw !== input_pw_re) {
+      alert("입력하신 비밀번호가 재입력과 일치하지 않습니다");
+      return false;
+    } else if (input_name === "") {
+      alert("이름을 입력해주세요.");
+      return false;
+    } else if (!isName(input_name)) {
+      alert("이름은 한글 2~17자리로 입력해야합니다.");
+      return false;
+    } else if (input_phone === "") {
+      alert("휴대전화를 입력해주세요.");
+      return false;
+    } else if (!isPhone(input_phone)) {
+      alert("휴대전화는 010-0000-0000 형식으로 입력해야합니다.");
+      return false;
+    } else if (input_nickname === "") {
+      alert("닉네임을 입력해주세요.");
+      return false;
+    } else if (!isNickname(input_nickname)) {
+      alert("닉네임은 한글, 영문, 숫자 2~10자리로 입력해야합니다.");
+      return false;
+    } else if (input_email_id === "") {
+      alert("이메일을 입력해주세요.");
+      return false;
+    } else if (input_email_domain === "") {
+      alert("이메일을 입력해주세요.");
+      return false;
+    } else if (!isId(input_email_id)) {
+      alert("이메일의 아이디 부분이 올바르지 않습니다.");
+      return false;
+    } else if (!isDomain(input_email_domain)) {
+      alert("이메일의 도메인 부분이 올바르지 않습니다.");
+      return false;
+    } else {
+      //유효성 검사 통과
+        document.getElementById("joinForm").submit();
+    }
+    
+  });
+
 </script>

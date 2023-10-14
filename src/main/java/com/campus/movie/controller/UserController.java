@@ -20,26 +20,46 @@ public class UserController {
 
     // == 구현해야 하는거 ==
     // 1.회원가입
-    // 2.로그인
+    // 2.로그인 v
     // 3.IDPW찾기
-    // 4.아이디중복검사, 닉네임중복검사
-    // 5. 로그아웃
+    // 4.아이디중복검사v, 닉네임중복검사v => 재입력창 만들어야...
+    // 5. 로그아웃 v
 
     // ------------------------------------------------
 
     //1. 회원가입
+    // 회원가입 페이지 매핑
     @GetMapping("/join")
     public String insertUser() {
         System.out.println("회원가입 실행...");
         return ("users/join");
     }
 
-    @PostMapping("/joinChk")
-    public ModelAndView joinChk(UserVO vo, HttpSession session) {
+    // 회원가입 실행 + 체크
+    @PostMapping("/users/joinChk")
+    public ModelAndView joinChk(UserVO vo) {
         ModelAndView mv = new ModelAndView();
 
+        // id값 POST 받은거 출력
 
-        System.out.println("회원가입 실행중...");
+        try {
+            int joinResult = service.userInsert(vo);
+            System.out.println("회원가입 결과 : " + joinResult);
+
+            if (joinResult > 0) {
+                System.out.println("회원가입 성공!");
+                mv.setViewName("redirect:/");
+
+            } else {
+                System.out.println("회원가입 실패!");
+                mv.setViewName("users/joinFail");
+            }
+
+        } catch (Exception e) {
+            System.out.println("회원가입 에러발생" + e.getMessage());
+            e.printStackTrace();
+            mv.setViewName("users/joinFail");
+        }
 
         return mv;
     }
@@ -95,8 +115,7 @@ public class UserController {
     //3.2 PW 찾기
 
     //4-1. 아이디 중복검사
-
-    @RequestMapping ("/idchk")
+    @RequestMapping ("/users/idchk")
     public ModelAndView idchk(@RequestParam String id) {
         ModelAndView mv = new ModelAndView();
         System.out.println("아이디 중복검사 실행중...");
@@ -122,6 +141,26 @@ public class UserController {
     }
 
     //4-2. 닉네임 중복검사
+    @RequestMapping ("/users/nicknamechk")
+    public ModelAndView nicknamechk(@RequestParam String nickname) {
+        ModelAndView mv = new ModelAndView();
+        System.out.println("닉네임 중복검사 실행중...");
+
+        try {
+            int result = service.nickChk(nickname);
+
+            System.out.println("nickname 중복검사 : " + result);
+            mv.addObject("result", result);
+            mv.setViewName("users/nicknamechk");
+            mv.addObject("nickname", nickname);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return mv;
+
+    }
 
     //5. 로그아웃
     @RequestMapping ("/users/logout")

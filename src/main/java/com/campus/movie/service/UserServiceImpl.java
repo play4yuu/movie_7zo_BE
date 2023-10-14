@@ -29,6 +29,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public int nickChk(String nickname) {
+        return mapper.nickChk(nickname);
+    }
+
+    @Override
     public String findId(String name, String email) {
         return mapper.findId(name, email);
     }
