@@ -1,4 +1,4 @@
-// íšŒì›ê°€ì…, ë¡œê·¸ì¸ ë“±ì— ì“°ì´ëŠ” UserService impl
+// È¸¿ø°¡ÀÔ, ·Î±×ÀÎ µî¿¡ ¾²ÀÌ´Â UserService impl
 
 package com.campus.movie.service;
 

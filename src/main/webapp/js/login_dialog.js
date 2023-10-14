@@ -1,4 +1,5 @@
 // js/login_dialog.js
+document.addEventListener("DOMContentLoaded", function() {
 
 const login_btn = document.getElementById("login_user");
 const close_btn = document.getElementById("login-modal_top-close");
@@ -91,4 +92,6 @@ modal__login_btn.addEventListener("click", function () {
     modal_background_none();
     return true;
   }
+});
+
 });

@@ -31,33 +31,13 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// "1:1 문의하기" 버튼을 클릭했을 때 모달 창 표시
-document.getElementById("openModalBtn").addEventListener("click", function () {
-  // 모달 창을 표시하는 CSS 클래스 추가
-  document.getElementById("myModal").style.display = "block";
-});
 
-// 모달 닫기 버튼 클릭 시 모달 창 닫기
-document.querySelector(".close").addEventListener("click", function () {
-  // 모달 창을 닫는 CSS 클래스 제거
-  document.getElementById("myModal").style.display = "none";
 
-  // 제목과 내용 입력 필드 초기화
-  document.getElementById("modal-title").value = "";
-  document.getElementById("content").value = "";
-});
 
-// 모달 다이얼로그 열기
-function openModal() {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "block";
-}
 
-// 모달 다이얼로그 닫기
-function closeModal() {
-  const modal = document.getElementById("myModal");
-  modal.style.display = "none";
-}
+
+
+
 
 // 전송 버튼 클릭 시 동작 (서버로 보내는 부분은 여기에 추가)
 const sendBtn = document.getElementById("sendBtn");

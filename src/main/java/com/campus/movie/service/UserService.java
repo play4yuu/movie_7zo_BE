@@ -1,4 +1,4 @@
-// íšŒì›ê°€ì…, ë¡œê·¸ì¸ ë“±ì— ì“°ì´ëŠ” UserService
+// È¸¿ø°¡ÀÔ, ·Î±×ÀÎ µî¿¡ ¾²´Â UserService
 
 package com.campus.movie.service;
 import com.campus.movie.vo.UserVO;

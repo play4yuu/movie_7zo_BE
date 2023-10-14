@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.campus.movie.mapper.UsersMapper">
-	<select id="loginSelect" resultType="com.campus.movie.vo.UsersVO">
-		select userid, username from users where userid=#{param1} and userpwd=#{param2}
+	<select id="login" resultType="com.campus.movie.vo.UsersVO">
+		select id, pw from user where id=#{param1} and pw=#{param2}
 	</select>
 </mapper>

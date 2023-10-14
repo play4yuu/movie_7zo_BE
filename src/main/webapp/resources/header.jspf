@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>영화가영화악</title>
+    <title>토론 페이지</title>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" ></script>
     <link rel="stylesheet" href="<c:url value="/css/style.css"/>" type="text/css" />

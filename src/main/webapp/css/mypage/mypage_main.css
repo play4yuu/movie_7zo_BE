@@ -13,7 +13,7 @@
   border-bottom: var(--gray-darker) 1px solid;
 }
 
-/* 로고부분 */
+/* 로고 부분 */
 #main_logo {
   position: absolute;
   left: 50%;
@@ -26,7 +26,7 @@
   background-repeat: no-repeat;
 }
 
-/*서브 메뉴*/
+/* 서브 메뉴 */
 
 .tab-buttons {
   display: flex;
@@ -34,7 +34,7 @@
   justify-content: center;
   align-items: center;
   height: 50px;
-  /* 화면의 높이에 따라 중앙 정렬 */
+  /* 화면 높이에 따라 중앙 정렬 */
   margin: 0;
   padding: 0;
   padding-bottom: 6px;
@@ -51,7 +51,7 @@
 .tab-buttons li {
   list-style: none;
   margin: 20px;
-  /* 간격을 조절 */
+  /* 간격 조절 */
 }
 
 .tab-buttons a {
@@ -60,7 +60,7 @@
   padding: 5px 10px;
 }
 
-/* 연주 : 추가적으로 작성한 부분입니다 */
+/* �뿰二� : 異붽��쟻�쑝濡� �옉�꽦�븳 遺�遺꾩엯�땲�떎 */
 body > div.main__titleText {
   display: flex;
   font-size: 22px;

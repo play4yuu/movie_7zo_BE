@@ -4,19 +4,19 @@ import com.campus.movie.vo.UserVO;
 
 public interface UserMapper {
 
-    //ë¡œê·¸ì¸
+    //·Î±×ÀÎ
     UserVO login(String id, String pw);
 
-    // íšŒì›ê°€ì…
+    // È¸¿ø°¡ÀÔ
     int userInsert(UserVO vo);
 
-    // ì•„ì´ë”” ì¤‘ë³µê²€ì‚¬
+    // ¾ÆÀÌµğ Áßº¹°Ë»ç
     int idCheck(String id);
 
-    //IDì°¾ê¸° (í•„ìš”ì •ë³´ : ì´ë¦„, ì´ë©”ì¼ )
+    //IDÃ£±â (ÇÊ¿äÁ¤º¸: ÀÌ¸§, ÀÌ¸ŞÀÏ)
     String findId(String name, String email);
 
-    //PWì°¾ê¸° ( í•„ìš”ì •ë³´ : id, íœ´ëŒ€ì „í™”, ì´ë©”ì¼ )
+    //PWÃ£±â ( ÇÊ¿äÁ¤º¸: id, ÈŞ´ëÀüÈ­, ÀÌ¸ŞÀÏ)
     String findPw(String name, String phone, String email);
 
 }

@@ -1,6 +1,6 @@
 @import url("variables.css");
 
-h3 {
+.title {
   font-size: 20px;
   text-align: center;
   padding: 10px 0;
@@ -19,7 +19,7 @@ h3 {
 .logFrm {
   display: flex;
   padding: 10px 0;
-  width: 500px;
+	
 }
 
 .title_content {
@@ -35,8 +35,12 @@ h3 {
   height: 10px;
   font-size: 13px;
   padding: 10px;
-  border: 1px solid;
-  color: rgb(192, 192, 192);
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.txtselect {
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 5px;
 }
 
 .button {
@@ -53,28 +57,22 @@ h3 {
 }
 
 .buttons {
-  margin-top: 20px; /* ë²„íŠ¼ë“¤ì˜ ìœ„ ì—¬ë°±ì„ ì¡°ì ˆ */
-  text-align: center; /* ë²„íŠ¼ë“¤ì„ ê°€ìš´ë° ì •ë ¬ */
+  margin-top: 20px; /* ¹öÆ°µéÀÇ À§ ¿©¹é Á¶Àı */
+  text-align: center; /* ¹öÆ°µéÀ» °¡¿îµ¥ Á¤·Ä */
 }
 
 .buttons input {
-  margin: 0 auto; /* ë²„íŠ¼ë“¤ì„ ìˆ˜í‰ ê°€ìš´ë° ì •ë ¬ */
+  margin: 0 auto; /* ¹öÆ°µéÀ» ¼öÆò °¡¿îµ¥ Á¤·Ä */
 }
 
 .delet {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 70px;
-  padding: 10px 0;
-  margin-top: 10px;
+  text-align: center;
 }
 
-.correction-title {
-  font-size: 20px;
+.delet-title {
   font-weight: bold;
-  display: flex;
-  margin: 10px 0;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 20px;
 }

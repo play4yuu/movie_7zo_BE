@@ -1,4 +1,4 @@
-// М ▄Л⌡░Й╟─Л·┘ К╟▐ Л═∙КЁ╢Л≈░ Л┌╛Л ╘К░≤К┼■ VO
+// х╦©Ь╟║ют ╧в а╓╨╦©║ ╩Г©К╣г╢б VO
 
 package com.campus.movie.vo;
 import lombok.Data;

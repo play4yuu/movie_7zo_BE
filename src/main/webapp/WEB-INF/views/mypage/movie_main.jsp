@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/movie/css/mypage/mypage_exchange.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <!--     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <style>
       @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"); 
     </style>
@@ -19,14 +19,12 @@
     <div id="mypage__wrap">
       <ul class="tab-buttons">
         <li><a href="mypage_info" data-tab="mypage_info">예매 정보</a></li>
-        <li><a href="mypage_inquiry" data-tab="mypage_inquiry">1:1 문의</a></li>
+        <li><a href="mypage_inquiry" data-tab="mypage_inquiry">자주 묻는 질문</a></li>
         <li>
           <a href="mypage_correction" data-tab="mypage_correction">회원 정보</a>
         </li>
         <li><a href="mypage_debate" data-tab="mypage_debate">내 토론</a></li>
-        <li>
-          <a href="mypage_exchange" data-tab="mypage_exchange">내 특전 교환</a>
-        </li>
+
       </ul>
 
       <div class="tab-content" id="mypage_info">
@@ -120,7 +118,12 @@
               영비법 29조에 따르면 [만 12세 이상 관람가/만 15세 이상 관람가]의
               등급이라도 부모 등 보호자를 동반하는 경우 어린이(유아) 동반이
               가능합니다.<br />
-              반드시 보호자의 동반이 필요함을 양지하여 주시기 바랍니다.
+              반드시 보호자의 동반이 필요함을 양지하여 주시기 바랍니다.<br />
+              단, 청소년 관람불가 영화는 보호자 동반과 관계없이 만 18세 미만이거나
+              연령 조건을 만족하여도 초중고 재학 중인 청소년 및 영유아 관람이 절대
+              불가합니다. 영화관 현장에서 연령확인 불가 시 입장이 제한될 수 있습니다.<br />
+              또한 상영등급에 맞지 않는 영화를 관람하거나 무단입장을 하는 경우
+              형사처벌 및 손해 배상의 대상이 될 수 있습니다.
             </div>
           </div>
           <hr />
@@ -149,107 +152,147 @@
               등은 법률에서 정한 기간 동안 보관될 수 있습니다.
             </div>
           </div>
+          <hr />
+          <div class="faq-item">
+            <div
+              class="Q"
+              style="font-size: 18px; font-weight: bold; color: black"
+            >
+              회원가입은 어떻게 하나요?
+            </div>
+            <div class="answer">
+              온라인 홈페이지 우측 상단의 [회원가입] 버튼을 누르면 회원에
+              가입할 수 있습니다.<br />
+             
+            </div>
+          </div>
+           <hr />
+          <div class="faq-item">
+            <div
+              class="Q"
+              style="font-size: 18px; font-weight: bold; color: black"
+            >
+              회원탈퇴는 어떻게 하나요?
+            </div>
+            <div class="answer">
+              회원 탈퇴를 원하실 경우, 온라인 홈페이지 [마이 페이지]→[회원 정보]
+              →[회원 탈퇴]버튼을 클릭하여 회원 탈퇴가 가능합니다.<br />
+            </div>
+          </div>
+          <hr />
+          <div class="faq-item">
+            <div
+              class="Q"
+              style="font-size: 18px; font-weight: bold; color: black"
+            >
+              아이디/비밀번호를 잃어버렸어요.
+            </div>
+            <div class="answer">
+              고객님의 회원정보는 온라인 홈페이지 우측 상단의 아이디/비밀번호 찾기를
+              클릭하시면 찾으실 수 있습니다.<br />
+             
+            </div>
+          </div>
           <!-- 추가 질문과 답변을 위한 구조 -->
-        </div>
-
-        <div class="myqna">
-          <h3 class="title">내 1:1 문의</h3>
-          <div class="question-list">
-            <div class="question">
-              <div class="question-title">
-                카드 재발급했는데 취소가 안됩니다
-              </div>
-              <div class="question-content">안되는데 어떻게.... 해요...?</div>
-              <div class="question-date">질문 일시: 2023-09-10</div>
-              <div class="answer-status">답변 완료</div>
-            </div>
-            <div class="question">
-              <div class="question-title">영화 시간표가 좀 다른것같아요</div>
-              <div class="question-content">수정해주세영</div>
-              <div class="question-date">질문 일시: 2023-09-11</div>
-              <div class="answer-status">답변 대기 중</div>
-            </div>
-          </div>
-
-          <button id="openModalBtn">1:1 문의하기</button>
-
-          <!-- 모달 다이얼로그 -->
-          <div id="myModal" class="modal">
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <h3 class="title">1:1 문의하기</h3>
-              <label for="modal-title"></label>
-
-              <input
-                type="text"
-                id="modal-title"
-                placeholder="문의 제목을 입력하세요."
-              />
-              <label for="content"></label>
-
-              <textarea
-                id="content"
-                placeholder="문의 내용을 입력하세요."
-              ></textarea>
-
-              <button id="sendBtn">등록</button>
-            </div>
-          </div>
         </div>
       </div>
 
+	<form method="POST" action="">
       <div class="tab-content" id="mypage_correction">
-        <!-- 탭 3 내용 -->
+        <!-- 탭 3 내용 - 회원 정보 -->
 
-        <div class="inFor">
+         <div class="inFor">
           <h3 class="title">회원 정보</h3>
           <div class="logFrms">
             <div class="logFrm">
-              <label class="title_content" for="username">아이디</label>
+              <label class="title_content" for="userid">아이디</label>
+              <input
+                class="txtfield"
+                id="userid"
+                type="text"
+                name="userid"
+                value="${user.id }"
+                minlength="3"
+                maxlength="12"
+                disabled
+              />
+            </div>
+
+            <div class="logFrm">
+              <label class="title_content" for="userpw">비밀번호</label>
+              <input
+                class="txtfield"
+                id="userpw"
+                type="password"
+                name="userpw"
+                value="${user.pw }"
+                minlength="6"
+                maxlength="15"
+                placeholder="영대문자, 소문자, 숫자 6~12자"
+              />
+            </div>
+
+            <div class="logFrm">
+              <label class="title_content" for="userpw2"
+                >비밀번호 재입력</label
+              >
+              <input
+                class="txtfield"
+                id="userpw2"
+                type="password"
+                name="userpw2"
+                minlength="6"
+                maxlength="15"
+                placeholder="비밀번호를 한 번 더 입력"
+              />
+            </div>
+
+            <div class="logFrm">
+              <label class="title_content" for="username">이름</label>
               <input
                 class="txtfield"
                 id="username"
                 type="text"
                 name="username"
-                minlength="3"
-                maxlength="12"
+                value="${user.name }"
+                disabled
               />
             </div>
-
-            <div class="logFrm">
-              <label class="title_content" for="password">비밀번호</label>
+            
+             <div class="logFrm">
+              <label class="title_content" for="userphone">전화번호</label>
               <input
                 class="txtfield"
-                id="password"
-                type="password"
-                name="password"
-                minlength="6"
-                maxlength="15"
+                id="userphone"
+                type="tel"
+                name="userphone"
+                value="${user.phone }"
+                placeholder="010-0000-0000"
               />
             </div>
-
-            <div class="logFrm">
-              <label class="title_content" for="password_"
-                >비밀번호 재입력</label
-              >
-              <input
-                class="txtfield"
-                id="password_"
-                type="password"
-                name="password_"
-                minlength="6"
-                maxlength="15"
-              />
-            </div>
-
-            <div class="logFrm">
+            
+             <div class="logFrm">
               <label class="title_content" for="nickname">닉네임</label>
               <input
                 class="txtfield"
                 id="nickname"
                 type="text"
                 name="nickname"
+                value="${user.nickname }"
+                placeholder="한글, 영어, 숫자 2~10글자"
               />
+            </div>
+            
+            <div class="logFrm">
+           	 <label class="title_content" for="gender">성별</label>
+              <select class="txtselect" id="gender" name="gender">
+				  <option 
+				 	 value="female" >여자</option>
+				  <option 
+				 	 value="male" >남자</option>
+				  <option 
+				 	 value="private" >비공개</option>
+			</select>
             </div>
 
             <div class="logFrm">
@@ -257,28 +300,22 @@
               <input
                 class="txtfield"
                 id="useremail_id"
-                type="email"
+                type="text"
                 name="useremail_id"
+                value="${user.email }"
+                placeholder="example"
               />
               <span class="at"> @ </span>
               <input
                 class="txtfield"
                 id="useremail_domain"
-                type="email"
+                type="text"
                 name="useremail_domain"
+                placeholder="example.com"
               />
             </div>
-
-            <div class="logFrm">
-              <label class="title_content" for="userphone">전화번호</label>
-              <input
-                class="txtfield"
-                id="userphone"
-                type="tel"
-                name="userphone"
-              />
-            </div>
-
+			<!-- 회원 정보 버튼 --> 
+		
             <div class="buttons">
               <input
                 type="submit"
@@ -294,9 +331,11 @@
               />
             </div>
           </div>
-
+			<!-- 회원 탈퇴 -->
+			<br />
+			<hr />
           <div class="delet">
-            <h3 class="correction-title">회원 탈퇴</h3>
+            <h3 class="delet-title">회원 탈퇴</h3>
             <p>탈퇴시 모든 정보가 삭제됩니다.</p>
             <br />
             <input
@@ -308,7 +347,7 @@
           </div>
         </div>
       </div>
-
+	</form>
       <div class="tab-content" id="mypage_debate">
         <!-- 탭 4 내용 -->
         <div class="discussion-board">
@@ -360,59 +399,7 @@
 
       <div class="tab-content" id="mypage_exchange">
         <!-- 탭 5 내용 -->
-        <div class="movie-gallery">
-          <h3 class="gallery-title title">등록한 특전</h3>
-
-          <div class="movie-cards">
-            <div class="movie-card">
-              <img
-                src="https://i.namu.wiki/i/z98MzK7NjRD10uE1FK-CoRfBDMcdsd6MijcObHh3X7HLptEq588WMqKWX8rrYC-c2gZpzk9Ie28G3xL5-bRAXEqNVF1mvTZGjvZhggZZ_4HV0yQiJSYA6eKhSSoUQ7HstUv47Gp5i_3eMfeapCWRzA.webp"
-                alt="Movie 1"
-              />
-              <div class="movie-info">
-                <h2>스즈메의 문단속</h2>
-                <p>교환 정보</p>
-                <p>1주차 : 포스터</p>
-                <p>CGV 아이맥스 포스터</p>
-              </div>
-              <div class="vertical-line"></div>
-              <!-- 구분선 추가 -->
-              <div class="booking-status">
-                <span>거래 중</span>
-              </div>
-            </div>
-
-            <div class="movie-card">
-              <img
-                src="https://i.namu.wiki/i/jHpT_6yRLyh-U0Jnc9JVKUqtEambKbpp9-FkPpWU0ic2ek5juO-SBEGiJlWa_y80n77aaUNfoB2qYXdUNtCZWbt5POSb_Jyyz6hp-7bar2nBneOick-_Enb0I82P3UlUaVtJt-7qPy9tiVD7ltHRQQ.webp"
-                alt="Movie 2"
-              />
-              <div class="movie-info">
-                <h2>스즈메의 문단속</h2>
-                <p>교환 정보</p>
-                <p>6주차 : PET스탠디+아트배경지</p>
-                <p>5주차 : 책Ver.2</p>
-              </div>
-              <div class="vertical-line"></div>
-              <!-- 구분선 추가 -->
-              <div class="booking-status">
-                <span>거래 완료</span>
-              </div>
-            </div>
-          </div>
-          <!-- 다른 영화 카드들도 추가 -->
-        </div>
-        <!-- 등록 버튼 추가 -->
-        <div>
-          <input
-            type="button"
-            class="button"
-            id="btn_gallery"
-            value="게시글 등록"
-          />
-        </div>
-      </div>
-    </div>
+ 
     <script>
       //서브메뉴
       $(document).ready(function () {
@@ -431,9 +418,9 @@
           var tabId = $(this).attr("data-tab");
           $("#" + tabId).show();
         });
-      });
+      }); 
     </script>
     
-    <script src="/movie/js/mypage/mypage_inquiry.js"></script>
-    <script src="/movie/js/mypage/mypage_correction.js"></script>
-    <script src="/movie/js/mypage/mypage_debate.js"></script>
+    <script src="<c:url value='/js/mypage/mypage_inquiry.js' />"></script>
+    <script src="<c:url value='/js/mypage/mypage_correction.js'/>"></script>
+    <script src="<c:url value='/js/mypage/mypage_debate.js'/>"></script>

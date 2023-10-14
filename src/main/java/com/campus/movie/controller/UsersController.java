@@ -36,6 +36,10 @@ public class UsersController {
 			session.setAttribute("logName", logVO.getUsername());
 			session.setAttribute("logStatus", "Y");
 			
+			System.out.println("Logged in user ID: " + session.getAttribute("logId"));
+	        System.out.println("Logged in user Name: " + session.getAttribute("logName"));
+	        System.out.println("Login Status: " + session.getAttribute("logStatus"));
+			
 			mav.setViewName("redirect:/");
 		}else {//로그인 실패 -> 로그인폼으로 이동
 			mav.setViewName("redirect:login");

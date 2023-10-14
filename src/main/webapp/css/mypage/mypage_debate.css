@@ -5,15 +5,15 @@
 .discussion-board {
   display: flex;
   flex-direction: column;
-  /*자식 요소들을 세로 배치*/
+  /* 자식 요소들을 세로로 배치 */
   flex-wrap: wrap;
   justify-content: center;
-  /* 중앙 정렬 추가 */
+  /* 중앙 정렬 */
 }
 
 .title {
   text-align: left;
-  /* 좌측 정렬을 위해 추가 */
+
 }
 
 .post {
@@ -48,10 +48,10 @@
 .search-bar {
   float: right;
   margin-top: 10px;
-  height: 30px; /* 높이를 조정할 값으로 변경 */
-  width: auto; /* 너비를 자동으로 조절 */
-  display: flex; /* 내부 요소들을 가로로 정렬하기 위해 추가 */
-  align-items: center; /* 내부 요소를 수직 가운데 정렬하기 위해 추가 */
+  height: 30px; /* 높이 */
+  width: auto; /* 너비 자동 */
+  display: flex; /* 내부 요소 가로 정렬 */
+  align-items: center; /* 내부 요소 수직 가운데 정렬 */
 }
 
 #search-input {
@@ -83,12 +83,12 @@
 }
 
 #add-post-button {
-  background-color: var(--gray-darker); /* 배경색 설정 */
-  color: #fff; /* 텍스트 색상 설정 */
-  padding: 10px 20px; /* 패딩 설정 (위아래 10px, 좌우 20px) */
-  border: none; /* 테두리 없애기 */
-  border-radius: 5px; /* 버튼 모서리를 둥글게 만들기 */
-  cursor: pointer; /* 마우스 커서를 손가락 모양으로 변경 */
+  background-color: var(--gray-darker); 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
 }
 
 #add-post-button:hover {
