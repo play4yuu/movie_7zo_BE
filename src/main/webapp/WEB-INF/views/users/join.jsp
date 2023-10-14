@@ -19,6 +19,7 @@
       <label class="join__form-label">아이디</label>
       <input type="text" class="join__form-input" placeholder="최소 4글자 최대 12글자 " id="join__input_id" name="id" minlength="4" maxlength="12" />
       <input type="button" class="join__form-button" id="join__input_id_check" value="중복확인" />
+      <input type="hidden" name="id_chk" id="id_chk" value="N"/>
     </div>
     
     <!-- 비밀번호 -->
@@ -50,6 +51,7 @@
       <label class="join__form-label">닉네임</label>
       <input type="text" class="join__form-input" placeholder="한글,영어,숫자 2~10글자" id="join__input_nickname" name="nickname" minlength="2" maxlength="10" />
       <input type="button" class="join__form-button" id="join__input_nickname_check" value="중복확인" />
+      <input type="hidden" name="nick_chk" id="nick_chk" value="N"/>
     </div>
     
     <!-- 이메일 -->
@@ -69,14 +71,44 @@
 <%------JS---------------------------------------------------------%>
 
 <script>
-  // === ID중복검사 ===
   
-  //ID 유효성 검사
+  // 유효성검사들
   function isId(asValue) {
     var regExp = /^[a-zA-Z0-9]{4,12}$/;
     return regExp.test(asValue);
   }
   
+  function isNickname(asValue) {
+    var regExp = /^[가-힣a-zA-Z0-9]{2,10}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isPw(asValue) {
+    var regExp = /^[a-zA-Z0-9]{6,12}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isName(asValue) {
+    var regExp = /^[가-힣]{2,17}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isPhone(asValue) {
+    var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isEmail(asValue) {
+    var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
+    return regExp.test(asValue);
+  }
+  
+  function isDomain(asValue){
+    var regExp = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
+    return regExp.test(asValue);
+  }
+  
+  // === ID중복검사 ===
   // (1) 아이디 중복체크
   const id_chk_btn = document.querySelector("#join__input_id_check");
   const id = document.getElementById("join__input_id")
@@ -97,14 +129,7 @@
     
   });
   
-  
   // === 닉네임 중복검사 ===
-  //유효성검사
-  function isNickname(asValue) {
-    var regExp = /^[가-힣a-zA-Z0-9]{2,10}$/;
-    return regExp.test(asValue);
-  }
-  
   // (2) 닉네임 중복체크
   const nickname_chk_btn = document.querySelector("#join__input_nickname_check");
   const nickname = document.getElementById("join__input_nickname")
@@ -125,48 +150,12 @@
     window.open("nicknamechk?nickname=" + input_nickname, "", "width=400, height=300");
     
   });
-
-
-</script>
-
-<script>
+  
   // ============= 회원가입 =============
   
   // 유효성검사
-  function isId(asValue) {
-    var regExp = /^[a-zA-Z0-9]{4,12}$/;
-    return regExp.test(asValue);
-  }
   
-  function isPw(asValue) {
-    var regExp = /^[a-zA-Z0-9]{6,12}$/;
-    return regExp.test(asValue);
-  }
-  
-  function isName(asValue) {
-    var regExp = /^[가-힣]{2,17}$/;
-    return regExp.test(asValue);
-  }
-  
-  function isPhone(asValue) {
-    var regExp = /^\d{3}-\d{3,4}-\d{4}$/;
-    return regExp.test(asValue);
-  }
-  
-  function isNickname(asValue) {
-    var regExp = /^[가-힣a-zA-Z0-9]{2,10}$/;
-    return regExp.test(asValue);
-  }
-  
-  function isEmail(asValue) {
-    var regExp = /^[a-zA-Z0-9]+@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
-    return regExp.test(asValue);
-  }
-  
-  function isDomain(asValue){
-    var regExp = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+){1,2}$/;
-    return regExp.test(asValue);
-  }
+
   
   
   const join_submit_btn = document.querySelector("#join_submit_btn");
@@ -225,6 +214,12 @@
       return false;
     } else if (!isDomain(input_email_domain)) {
       alert("이메일의 도메인 부분이 올바르지 않습니다.");
+      return false;
+    } else if ( document.getElementById("id_chk").value === "N") {
+      alert("아이디 중복확인을 해주세요.");
+      return false;
+    } else if ( document.getElementById("nick_chk").value === "N") {
+      alert("닉네임 중복확인을 해주세요.");
       return false;
     } else {
       //유효성 검사 통과

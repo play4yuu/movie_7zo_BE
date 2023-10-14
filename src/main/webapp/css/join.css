@@ -31,11 +31,6 @@
   height: auto;
 }
 
-.join__form-label {
-  width: 120px;
-  text-align: center;
-}
-
 .join__forminsert {
   display: flex;
   flex-direction: row;
@@ -121,4 +116,44 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
+}
+
+/* ============= BE 새로 수정하면서 생긴 부분들 ============= */
+
+.join__input_wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: auto;
+  height: auto;
+
+  margin : 3px 0 0 0;
+}
+
+.join__form-label {
+  width: 200px;
+  text-align: left;
+  margin : 8px 0 10px 0;
+}
+
+/* 중복확인 버튼 */
+.join__form-button {
+  width: auto;
+  height: 25px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: var(--gray-darker);
+  color: white;
+  font-size: 12px;
+
+  position: absolute;
+
+  top:3px;
+  right:0;
+
 }

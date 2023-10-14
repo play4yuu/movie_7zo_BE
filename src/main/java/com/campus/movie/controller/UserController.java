@@ -36,7 +36,7 @@ public class UserController {
     }
 
     // 회원가입 실행 + 체크
-    @PostMapping("/users/joinChk")
+    @RequestMapping("/users/joinChk")
     public ModelAndView joinChk(UserVO vo) {
         ModelAndView mv = new ModelAndView();
 
