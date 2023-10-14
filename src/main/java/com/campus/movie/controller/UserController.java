@@ -4,13 +4,11 @@ import com.campus.movie.service.UserService;
 import com.campus.movie.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.util.Objects;
 
 @Controller
 public class UserController {
@@ -19,10 +17,10 @@ public class UserController {
     private UserService service;
 
     // == 구현해야 하는거 ==
-    // 1.회원가입
+    // 1.회원가입 v
     // 2.로그인 v
     // 3.IDPW찾기
-    // 4.아이디중복검사v, 닉네임중복검사v => 재입력창 만들어야...
+    // 4.아이디중복검사v, 닉네임중복검사v , 재입력창v
     // 5. 로그아웃 v
 
     // ------------------------------------------------
@@ -39,8 +37,6 @@ public class UserController {
     @RequestMapping("/users/joinChk")
     public ModelAndView joinChk(UserVO vo) {
         ModelAndView mv = new ModelAndView();
-
-        // id값 POST 받은거 출력
 
         try {
             int joinResult = service.userInsert(vo);
@@ -110,11 +106,30 @@ public class UserController {
         return ("users/search");
     }
 
+
     //3.1 ID 찾기
+    @GetMapping("/searchResult")
+    public ModelAndView searchId(String name, String email) {
+        ModelAndView mv = new ModelAndView();
+
+        mv.addObject("name", name);
+        mv.addObject("email", email);
+
+        System.out.println("찾기 실행중...");
+        System.out.println("들어온 값확인 // 이름 : " + name + "/ email : " + email);
+
+        String result_id = service.findId(name, email);
+        System.out.println("찾은 아이디 : " + result_id);
+        mv.addObject("result_id", result_id);
+
+        mv.setViewName("users/searchResult");
+
+        return mv;
+    }
 
     //3.2 PW 찾기
 
-    //4-1. 아이디 중복검사
+    //4-1. 아이디 중복검사 完
     @RequestMapping ("/users/idchk")
     public ModelAndView idchk(@RequestParam String id) {
         ModelAndView mv = new ModelAndView();
@@ -140,7 +155,7 @@ public class UserController {
 
     }
 
-    //4-2. 닉네임 중복검사
+    //4-2. 닉네임 중복검사　完
     @RequestMapping ("/users/nicknamechk")
     public ModelAndView nicknamechk(@RequestParam String nickname) {
         ModelAndView mv = new ModelAndView();

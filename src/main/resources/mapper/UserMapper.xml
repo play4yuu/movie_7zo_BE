@@ -19,12 +19,12 @@
     </select>
 
     <!--아이디찾기-->
-    <select id="findId" resultType="int">
+    <select id="findId" resultType="String">
         select id from user where name=#{param1} and email=#{param2}
     </select>
 
     <!--비밀번호찾기-->
-    <select id="findPw" resultType="int">
+    <select id="findPw" resultType="String">
         select pw from user where id=#{param1} and name=#{param2} and email=#{param3}
     </select>
 
