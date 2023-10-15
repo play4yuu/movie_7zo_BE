@@ -55,25 +55,25 @@
 			<span title="incheon"> 인천</span> | <span title="bupyeong"> 부평 </span>
 		</div>
 		<div class="contents">
-			1111
+			<span title="chuncheon">춘천</span>
 		</div>
 		<div class="contents">
-			222
+			<span title="yusung">유성</span> | <span title="seosan">서산</span>
 		</div>
 		<div class="contents">
-			333
+			<span title="dongsung">동성로</span>
 		</div>
 		<div class="contents">
-			1111
+			<span title="choryang">초량</span> | <span title="ulsan">울산</span>
 		</div>
 		<div class="contents">
-			222
+			<span title="masan">마산</span>
 		</div>
 		<div class="contents">
-			333
+			<span title="gusichung">구시청</span> | <span title="gunsan">군산</span>
 		</div>
 		<div class="contents">
-			101010
+			<span title="jeju">제주</span>
 		</div>
 	</div>
 </div>
