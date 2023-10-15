@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
 import com.campus.movie.service.MypageService;
 import com.campus.movie.vo.UserVO;
 
@@ -16,7 +15,7 @@ public class MypageController {
 	@Autowired
 	MypageService service;
 	
-	@GetMapping("/profile")
+	@GetMapping("mypage/profile")
 	public String editProfile(HttpSession session, Model model) {
 		String userId = (String) session.getAttribute("id");
 		System.out.println("Session id: " + userId);

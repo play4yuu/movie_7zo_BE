@@ -197,7 +197,7 @@
         </div>
       </div>
 
-	<form method="POST" action="">
+	<form method="POST" action="/mypage/update">
       <div class="tab-content" id="mypage_correction">
         <!-- 탭 3 내용 - 회원 정보 -->
 
@@ -210,7 +210,7 @@
                 class="txtfield"
                 id="userid"
                 type="text"
-                name="userid"
+                name="id"
                 value="${user.id }"
                 minlength="3"
                 maxlength="12"
@@ -224,7 +224,7 @@
                 class="txtfield"
                 id="userpw"
                 type="password"
-                name="userpw"
+                name="pw"
                 value="${user.pw }"
                 minlength="6"
                 maxlength="15"
@@ -240,7 +240,7 @@
                 class="txtfield"
                 id="userpw2"
                 type="password"
-                name="userpw2"
+                name="pw2"
                 minlength="6"
                 maxlength="15"
                 placeholder="비밀번호를 한 번 더 입력"
@@ -253,7 +253,7 @@
                 class="txtfield"
                 id="username"
                 type="text"
-                name="username"
+                name="name"
                 value="${user.name }"
                 disabled
               />
@@ -265,7 +265,7 @@
                 class="txtfield"
                 id="userphone"
                 type="tel"
-                name="userphone"
+                name="phone"
                 value="${user.phone }"
                 placeholder="010-0000-0000"
               />
@@ -301,18 +301,11 @@
                 class="txtfield"
                 id="useremail_id"
                 type="text"
-                name="useremail_id"
+                name="email"
                 value="${user.email }"
-                placeholder="example"
+                placeholder="example@gmail.com"
               />
-              <span class="at"> @ </span>
-              <input
-                class="txtfield"
-                id="useremail_domain"
-                type="text"
-                name="useremail_domain"
-                placeholder="example.com"
-              />
+
             </div>
 			<!-- 회원 정보 버튼 --> 
 		

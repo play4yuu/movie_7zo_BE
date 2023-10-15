@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.campus.movie.mapper.MymovieMapper;
 
+
 @Service
 public class MymovieServiceImpl implements MymovieService {
 	@Inject
