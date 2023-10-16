@@ -9,7 +9,7 @@ public interface UserService {
     int idCheck(String id);
     int nickChk(String nickname);
     String findId(String name, String email);
-    String findPw(String name, String phone, String email);
+    String findPw(String id, String phone, String email);
     UserVO join(String id, String pw, String nickname, String name, String phone, String email);
 
 }

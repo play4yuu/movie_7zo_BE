@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.Objects;
 
 @Controller
 public class UserController {
@@ -99,28 +98,51 @@ public class UserController {
     }
 
     //3. ID/PW 찾기
-    @GetMapping ("/search")
-    public String search() {
-        System.out.println("아이디/비밀번호 찾기 실행...");
-        //만약 로그인 중이라면 어떻게해야하지?
-        return ("users/search");
-    }
-
+//    @GetMapping ("/search")
+//    public String search() {
+//        System.out.println("아이디/비밀번호 찾기 실행...");
+//        //만약 로그인 중이라면 어떻게해야하지?
+//        return ("users/search");
+//    }
 
     //3.1 ID 찾기
-    @GetMapping("/searchResult")
-    public ModelAndView searchId(String name, String email) {
+    @GetMapping ("/users/searchResult")
+    @ResponseBody
+    public ModelAndView searchId(String search_type, String name, String email, String phone, String id) {
         ModelAndView mv = new ModelAndView();
 
-        mv.addObject("name", name);
-        mv.addObject("email", email);
+        mv.addObject("search_type", search_type);
 
-        System.out.println("찾기 실행중...");
-        System.out.println("들어온 값확인 // 이름 : " + name + "/ email : " + email);
+        if (search_type.equals("id")){
+            // 아이디 찾기
+            System.out.println("아이디 찾기");
+            mv.addObject("name", name);
+            mv.addObject("email", email);
 
-        String result_id = service.findId(name, email);
-        System.out.println("찾은 아이디 : " + result_id);
-        mv.addObject("result_id", result_id);
+            System.out.println("들어온 값확인 // 이름 : " + name + "/ email : " + email);
+
+            String resultID = service.findId(name, email);
+            System.out.println("찾은 아이디 : " + resultID);
+            mv.addObject("result_id", resultID);
+
+
+        } else if(search_type.equals("pw")){
+            //비밀번호 찾기...
+            System.out.println("비밀번호 찾기");
+
+            mv.addObject("id", id);
+            mv.addObject("phone", phone);
+            mv.addObject("email", email);
+
+            System.out.println("들어온 값 : " + id + " " + phone + " " + email);
+
+            String resultPW = service.findPw(id, phone, email);
+            System.out.println("찾은 비밀번호" + resultPW);
+            mv.addObject("result_pw", resultPW);
+
+        } else {
+            System.out.println("IDPW찾기 > 잘못된 접근");
+        }
 
         mv.setViewName("users/searchResult");
 

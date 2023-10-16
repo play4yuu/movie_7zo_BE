@@ -11,6 +11,10 @@
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
+html {
+  height: 100%;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -22,7 +26,7 @@ body {
   color: var(--black);
 
   height: 100%;
-
+  min-height: 100%;
   position: relative;
 }
 
@@ -43,6 +47,10 @@ a {
   /* border: 1px solid rgb(192, 0, 0); */
 
   position: relative;
+}
+
+#content_wrap {
+  margin-bottom: 140px;
 }
 
 /* ========== 諛뺤뒪�삤�뵾�뒪 ========= */
@@ -180,6 +188,13 @@ a {
 }
 
 /* ================== �븯�떒 �꽌釉뚮찓�돱諛� ================ */
+
+#main__SubMenu{
+  display : flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .main__SubMenu__wrap {
   display: flex;
   width: 900px;
@@ -250,3 +265,8 @@ a {
 }
 
 
+
+/* ===== */
+#index_wrap {
+  min-height: 100%;
+}

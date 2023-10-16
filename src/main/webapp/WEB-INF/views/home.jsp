@@ -2,6 +2,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
+<style>
+  #index_wrap {
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 140px;
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+  }
+  
+</style>
+
+
+
     <section id="main__MovieRank" class="container">
       <div class="main__boxofficeTitle">박스오피스</div>
 
@@ -93,28 +110,25 @@
       <div class="main__SubMenu__wrap">
         <div class="main__SubMenu__cell">
           <a href="./PAGES/MOVIE/search.html">
-            <span class="material-icons"> search </span>영화 검색</a
-          >
+            <span class="material-icons"> search </span>영화 검색</a>
         </div>
 
         <div class="main__SubMenu__cell">
           <a href="./PAGES/TICKETING/home.html">
-            <span class="material-icons"> book_online </span>예매하기</a
-          >
+            <span class="material-icons"> book_online </span>예매하기</a>
         </div>
 
         <div class="main__SubMenu__cell">
           <a href="./PAGES/EXCHANGE/list.html">
-            <span class="material-icons"> sync_alt </span>특전교환</a
-          >
+            <span class="material-icons"> sync_alt </span>특전교환</a>
         </div>
 
         <div class="main__SubMenu__cell">
           <a href="./PAGES/DEBATE/home.html">
-            <span class="material-icons"> forum </span>토론</a
-          >
+            <span class="material-icons"> forum </span>토론</a>
         </div>
       </div>
     </section>
-    
-    <script src="/movie/js/file_insert_temp.js"></script>
+  
+
+<%--<script src="/movie/js/file_insert_temp.js"></script>--%>
