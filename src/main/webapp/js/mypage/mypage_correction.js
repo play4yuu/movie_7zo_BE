@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 
+	const updateForm = document.getElementById("updateForm");
     const btnInfo = document.getElementById("btn_info");
+
     if (btnInfo) {
         btnInfo.addEventListener("click", function(e) {
             e.preventDefault();
@@ -43,8 +45,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 return;
             }
 
-            // 여기에 서버로 정보를 전송하는 코드를 추가합니다. 
-            // 예: Ajax를 사용한 서버 요청 또는 form submit 등
+             // 모든 유효성 검사를 통과한 경우 form 제출
+          		updateForm.action = "/mypage/update";
+            	updateForm.submit();
 
             alert("회원정보가 성공적으로 수정되었습니다!");
         });
@@ -57,19 +60,23 @@ document.addEventListener("DOMContentLoaded", function() {
             const result = confirm("정말로 입력을 취소하시겠습니까?");
             if (result) {
                 alert("입력이 취소되었습니다.");
+                window.history.back(); // 이전 페이지로 리다이렉트
             }
         });
     }
 
     // 회원 탈퇴 버튼에 대한 로직
-    const btnDelete = document.getElementById("btn_delete");
+        const btnDelete = document.getElementById("btn_delete");
     if (btnDelete) {
         btnDelete.addEventListener("click", function() {
             const result = confirm("정말로 회원 탈퇴하시겠습니까?");
             if (result) {
-                // 회원 탈퇴 로직 구현 부분
-
-                alert("회원 탈퇴되었습니다.");
+                // 회원 탈퇴를 처리하는 폼 생성 및 서브밋
+                const form = document.createElement('form');
+                form.method = 'post';
+                form.action = '/mypage/delete';
+                document.body.appendChild(form);
+                form.submit();
             } else {
                 alert("회원 탈퇴가 취소되었습니다.");
             }

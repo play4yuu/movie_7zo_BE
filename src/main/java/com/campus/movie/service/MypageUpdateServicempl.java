@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.campus.movie.mapper.MypageUpdateMapper;
 import com.campus.movie.vo.UserDTO;
+import com.campus.movie.vo.UserVO;
 
 @Service
 public class MypageUpdateServicempl implements MypageUpdateService{
@@ -16,4 +17,10 @@ public class MypageUpdateServicempl implements MypageUpdateService{
 	public void updateUser(String loginId, UserDTO userDTO) {
 		mapper.updateUser(loginId, userDTO);
 	}
+
+	@Override
+	public void deleteUser(String loginId) {
+	    mapper.deleteUser(loginId);
+	}
+
 }

@@ -3,14 +3,18 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.campus.movie.mapper.MypageUpdateMapper">
- <update id="updateUser" parameterType="com.campus.movie.vo.UserDTO">
+ 	<update id="updateUser" parameterType="com.campus.movie.vo.UserDTO">
         UPDATE user
         SET
-          pw = #{pw},
-          email = #{email},
-          name = #{name},
-          phone = #{phone},
-          nickname = #{nickname}
-   		  WHERE id = #{id}
+          pw = #{userDTO.pw},
+          email = #{userDTO.email},
+          name = #{userDTO.name},
+          phone = #{userDTO.phone},
+          nickname = #{userDTO.nickname}
+   		  WHERE id = #{loginId}
     </update>
+    
+	<delete id="deleteUser">
+    DELETE FROM user WHERE id = #{loginId}
+    </delete>
 </mapper>

@@ -30,4 +30,6 @@ public class MypageController {
 		return "mypage/movie_main";
 	}
 	
+	
+	
 }

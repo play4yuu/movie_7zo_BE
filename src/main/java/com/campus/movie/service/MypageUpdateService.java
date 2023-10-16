@@ -6,5 +6,7 @@ public interface MypageUpdateService {
 
 	void updateUser(String loginId, UserDTO userDTO);
 
+	void deleteUser(String loginId);
+
 
 }

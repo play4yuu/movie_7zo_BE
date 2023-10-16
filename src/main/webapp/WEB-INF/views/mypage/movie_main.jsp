@@ -197,7 +197,7 @@
         </div>
       </div>
 
-	<form method="POST" action="/mypage/update">
+	<form id="updateForm" method="POST" action="/mypage/update">
       <div class="tab-content" id="mypage_correction">
         <!-- 탭 3 내용 - 회원 정보 -->
 
