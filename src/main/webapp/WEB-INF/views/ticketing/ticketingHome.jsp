@@ -202,23 +202,7 @@
       }
     </style>
 
-    <script>
-      $(document).on("click", "#poster_screen>img", function () {
-        $("#userid1").attr("value", $(this).attr("title"));
-        $("img[title =" + $("#userid1").val() + "]")
-          .css("border", "10px solid var(--point-color) ")
-          .css("border-radius", "0.5rem");
-        $("img[title !=" + $("#userid1").val() + "]").css("border", "");
-      });
-
-      $(document).on("click", ".contents>span", function () {
-        $("#userid2").attr("value", $(this).attr("title"));
-        $("span[title =" + $("#userid2").val() + "]")
-          .css("border", "5px solid var(--point-color) ")
-          .css("border-radius", "0.5rem");
-        $("span[title !=" + $("#userid2").val() + "]").css("border", "");
-      });
-    </script>
+   
     
         <div class="container">
       <div id="movie_ticketing_name">
@@ -231,10 +215,16 @@
         </div>
         <div id="movie_ticketing_name_bottom">
           <div id="poster_screen">
-            <img class="poster" src="img/oppenheimer.jpg" title="m01" />
-            <img class="poster" src="img/jam.webp" title="m02" />
-            <img class="poster" src="img/venice.jpg" title="m03" />
-            <img class="poster" src="img/87395_320.jpg" title="m04"/ >
+          	<c:forEach var="mVO" items="${m4list }">
+          	<img class="poster" src="${mVO.poster_url }" title="${mVO.movie_id}" />
+          	</c:forEach>
+            
+            <!-- 
+	            <img class="poster" src="img/jam.webp" title="2" />
+	            <img class="poster" src="img/venice.jpg" title="3" />
+	            <img class="poster" src="img/87395_320.jpg" title="4"/ >
+             -->
+             
           </div>
         </div>
       </div>
@@ -271,62 +261,75 @@
           <input type="radio" name="munu" id="m10" value="m10" />
 
           <div class="contents">
-            <span title="gangnam"> 강남</span> | <span title="isu">이수</span> |
-            <span title="gangbuk"> 강북 </span>
+            <span title="2"> 강남</span> | <span title="3">이수</span> |
+            <span title="4"> 강북 </span>
           </div>
           <div class="contents">
-            <span title="seongnam"> 성남</span> |
-            <span title="yangpyeong"> 양평 </span>
+            <span title="5"> 성남</span> |
+            <span title="6"> 양평 </span>
           </div>
           <div class="contents">
-            <span title="incheon"> 인천</span> |
-            <span title="bupyeong"> 부평 </span>
+            <span title="7"> 인천</span> |
+            <span title="8"> 부평 </span>
           </div>
           <div class="contents">
-            <span title="gangwon"> 강원</span>
+            <span title="9"> 강원</span>
           </div>
           <div class="contents">
-            <span title="daejeon_chungcheong"> 대전/충청</span>
+            <span title="10"> 대전/충청</span>
           </div>
           <div class="contents">
-            <span title="daegu"> 대구</span>
+            <span title="11"> 대구</span>
           </div>
           <div class="contents">
-            <span title="busan_ulsan"> 부산/울산</span>
+            <span title="12"> 부산/울산</span>
           </div>
           <div class="contents">
-            <span title="gyeongsang"> 경상</span>
+            <span title="13"> 경상</span>
           </div>
           <div class="contents">
-            <span title="gwangju_jeonla"> 광주/전라</span>
+            <span title="14"> 광주/전라</span>
           </div>
           <div class="contents">
-            <span title="jeju"> 제주</span>
+            <span title="15"> 제주</span>
           </div>
         </div>
       </div>
+      <script>
+      function selectCheck(){
+  		if(document.getElementById("userid1").value==""){
+  			alert("영화를 선택 하세요..");
+  			return false;
+  		}
+  		if(document.getElementById("userid2").value==""){
+  			alert("상영관을 입력하세요..");
+  			return false;
+  		}
+  		return true;
+  	   }
+      </script>
 
       <div id="movie_ticketing_input">
-        <form>
+        <form method="post" action="${pageContext.servletContext.contextPath}/theater/schedule" onsubmit="return selectCheck()">
           <input
             type="hidden"
             id="userid1"
-            value="park"
+            value="${abcVO.movie_id }"
             size="20"
             maxlength="10"
-            disabled
+            name="movie_id"
+			
           />
           <input
             type="hidden"
             id="userid2"
-            value="park"
+            value=""
             size="20"
             maxlength="10"
-            disabled
+             name="theater_id"
           />
           <input
             id="movie_ticketing_input_1"
-            onclick="window.open('../THEATER/schedule.html')"
             type="submit"
             name="reg"
             value="예매하기"
@@ -334,27 +337,23 @@
         </form>
       </div>
     </div>
-    
-      <script>
-    var movie_poster = [
-      "https://i.namu.wiki/i/E6R3TNGpXqi4yUiLdPsUEciKrvfqIgqTBdN7BOXPMh8R3Deq1wR5AjbUEchljV0_i738w0vRk935WtmwnJRkZPJxPYEqiQRqLV17ZO-NJUBQxXxabwtLYGOHYDCoLU-Gj3x2Tu2EcrLijFLret8TOQ.webp",
-      "https://i.namu.wiki/i/WYr74MfzAmdHL7P4xOVsz4jkgYre0O6XEdKlhbYmpAFI5vc66Vk8BHunotEP05ySmmAYjmQOaOEmGL27FqNlO9tqWCIeWf4a_QjsFPwp3-ZzgnKkoZRNHGgT-3kE09Wc4BRwoHy0l5aezUwL80S-xg.webp",
-      "https://i.namu.wiki/i/U3gD6m5wifmW5i3PVQmjBltwFGxlS50rS4VoFsVag9UKEIpxKxG_HZwZkjuBSipNC-UN7TzWMVw2BTNcwuKGZucpJHa7cfwVur6c_bRmplp8hzgUPRXOUE3mUe-_8ntMwAjlO8WVOPb4CyuaDNfJqw.webp",
-      "https://i.namu.wiki/i/mwOK_QJSDCMnSwMpg-ek2gzQyCANKo07zRJBAwEQxbVDIB1a4DGYfFPG18TGwcFH_WGdVwJTmtA9Vxp2Hv96T-uQoOCxNqUualRbJdsDJjjSjG2h9bMkw7MvNDo5djGNX2im_h90rMU6WtQVOsliKw.webp",
-      "https://i.namu.wiki/i/cs3xaLROQznQRATLP2hAts-_0vpIergnpTPiGIMW_skfseaRFSELA2rFpM0e2P5JvgN0BO7Ka7UAGhGPK_tfjc2w2RIZObFrhDzGI3mXnOJ4A4ABsMI--Kgi_IrJAxzRtyJC678xAQ0XGzyXCMqNfQ.webp",
-      "https://i.namu.wiki/i/tUJcxf4-2y8OiWJsTJkn8OZe6d5-n1cvzunI2wJh4_jzYGqQP_WObZboZ_CIF-6QjSXX8ApqP_e1FSWk9JiN0EkEFKuMVd6oynw_KEKUfToD3vNPaoiuEFCkI0gQ7BEv55V12pswzqPtjut3Tnv7vA.webp",
-      "https://i.namu.wiki/i/IFetVqNOpUlRmz8hyVgTvSsqUcanq8nfY1s0CyAJJOXxCGUu-k_ENxh7agH1tODXEY2UFDnh2yWJNbgxEkEpCyD132cTI1ZCUpBT8yK9aSJZLwv4vfdlsa22Uj8SxCKco8QVuxsqpWtKxv0YVpcHKA.webp",
-      "https://i.namu.wiki/i/XrUGpSROlmQpCjyeU62gG1m2Zq42-SS6iGSVT_TYDocad2DOTwe6_RwMEiFQpNRk5nasZw927UzZMegCvcspOzihXNE4ui-8OCYpBEg3x6Q3D_B7kqiSADPniKqNY9xOSdZB9LukFRK1TriKyaoTqg.webp",
-      "https://i.namu.wiki/i/187UmtG2GUlPX020ZUZ30kai4s2rius4c83bPkssZlnrWi7ExPAuwSSAwuKt_TBAGQ_gEXJllx3zG5W9JqVHDyGZtM_hJOGGAxHl0NYmfdDkqMZz9Nw8rIG0HiFoM8Ls4YXK7wnHBQXbRN-IFVigug.webp",
-      "https://i.namu.wiki/i/oHDm2TNu-CGhhPv4dC50z4SLsYa29S8qj0szg22C4lRV1mqVcQIM76_LN4Bw_fZu76X8ikmDnFNlfa8XPrfzjo2jTpyzMTpYNkX_my9uQkYHvltKIjaIf-SF5S-Ix7eKseNjtQFJSgevXcdrqiUW2g.webp",
-      //10
-    ];
+     <script>
+      $(document).on("click", "#poster_screen>img", function () {
+        $("#userid1").attr("value", $(this).attr("title"));
+        $("img[title =" + $("#userid1").val() + "]")
+          .css("border", "10px solid var(--point-color) ")
+          .css("border-radius", "0.5rem");
+        $("img[title !=" + $("#userid1").val() + "]").css("border", "");
+      });
 
-    const posters = document.getElementsByClassName("poster");
+      $(document).on("click", ".contents>span", function () {
+        $("#userid2").attr("value", $(this).attr("title"));
+        $("span[title =" + $("#userid2").val() + "]")
+          .css("border", "5px solid var(--point-color) ")
+          .css("border-radius", "0.5rem");
+        $("span[title !=" + $("#userid2").val() + "]").css("border", "");
+      });
+    </script>
 
-    for (let i = 0; i < posters.length; i++) {
-      posters[i].src = movie_poster[i];
-    }
-  </script>
     
     

@@ -33,6 +33,7 @@
         <!-- 탭 1 내용 -->
         <p class="title">예매 정보</p>
         <div id="mypage_ticket_con_wrap">
+        <!-- 여기서부터 복제 -->
           <div id="complete__ticket__con">
             <!-- 왼쪽부분 -->
             <div id="comp__left">

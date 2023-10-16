@@ -365,19 +365,19 @@
      <div id="movie_detail_main">
       <div id="movie_detail_top">
         <div id="img_wrap">
-          <div class="img_insert"></div>
+        	<img class="img_insert" src="${mvo.poster_url }">
+         
         </div>
         <div id="exp_wrap">
           <div id="movie_detail_top_explain">
-            <div class="top_title">오펜하이머</div>
+            <div class="top_title"> ${mvo.movie_name }</div>
             <div class="explain_wrap">
-              <div>감독: 크리스토퍼 놀란</div>
+              <div>"${mvo.director }"</div>
               <div>
-                배우: 킬리언 머피, 에밀리 블런트, 맷 데이먼, 로버트 다우니
-                주니어
+                ${mvo.actor }
               </div>
-              <div>개봉: 2023.08.15</div>
-              <div>장르: 스릴러, 드라마</div>
+              <div>개봉:  ${mvo.show_date }</div>
+              <div>장르: ${mvo.genre }</div>
               <div>누적 관객수: 1,346,328</div>
               <div>평점: 4.5/5.0</div>
             </div>
@@ -404,8 +404,8 @@
       <div style="margin: 40px auto" id="movie_detail_summary">
         <div style="font-size: 1.5em" class="title">줄거리</div>
         <p id="movie_detail_summary_contents">
-          미국의 물리학자 로버트 오펜하이머는 제 2차 세계대전에 쓸 핵무기를
-          개발하기 위한 비밀 프로젝트 '맨해튼 프로젝트'를 주도하게 된다.<br />
+         <!-- 미국의 물리학자 로버트 오펜하이머는 제 2차 세계대전에 쓸 핵무기를
+          개발하기 위한 비밀 프로젝트 '맨해튼 프로젝트'를 주도하게 된다.<br/>
           케임브리지 대학교 대학원 유학 시절 실험물리학에 서툴러서 고생하던
           22살의 청년 오펜하이머가 지도교수 패트릭 블래킷을 독살하려던
           이야기에서 시작한다.<br />
@@ -417,6 +417,11 @@
           미국 칼텍, 그리고 UC 버클리로 돌아온 오펜하이머는 실험물리학자인
           어니스트 로런스와 협업하게 되고, 진 태틀록과 연인 관계가 되지만 결국
           그녀와는 틀어지고 유부녀였던 캐서린과 눈이 맞은 끝에 결혼하게 된다.
+          "https://www.youtube.com/embed/oSqK_v6zPoM?si=0v1wLjMbdIymYXJs"
+           -->
+          
+          '${mvo.synopsis }'
+          "${mvo.trailer_url }"
           <br />
         </p>
         <hr />
@@ -427,7 +432,7 @@
         <div id="movie_detail_video_contents">
           <iframe
             id="movie_detail_video_contents_youtube"
-            src="https://www.youtube.com/embed/oSqK_v6zPoM?si=0v1wLjMbdIymYXJs"
+            src="${mvo.trailer_url }"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

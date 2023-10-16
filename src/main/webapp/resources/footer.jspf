@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
-</div>  <%--content_warp 닫는 div입니다--%>
-</div> <%-- #wrapper의 닫는 코드 --%>
-
  <!-- FOOTER 건들지마세요 -->
     <section id="footer">
       <div class="footer__wrap">
@@ -18,17 +13,11 @@
           <span>소재지 : 경기도 어쩌구 저쩌구 저쩌구저쩌구</span>
         </div>
       </div>
-
-
     </section>
-
-
-
     <script src="/movie/js/login_dialog.js"></script>
     <script src="/movie/js/mainpage.js"></script>
     <script>
       const posters = document.querySelectorAll(".movie_schedule_obj_poster");
     </script>
-
   </body>
 </html>

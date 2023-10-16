@@ -3,5 +3,23 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.campus.movie.mapper.TheaterMapper">
-
+	<select id="showingList" resultType="com.campus.movie.vo.ShowingVO">
+		select show_id,screen_id,theater_id, movie_id, show_date, date_format(show_start,'%H:%i') show_start,date_format(show_end,'%H:%i') show_end, reservation_status 
+		 from showing where movie_id=${param1} and theater_id=${param2} 
+	</select>
+	
+	<select id="seatList" resultType="com.campus.movie.vo.SeatVO">
+		select * from seat where show_id=${param1}
+	</select>
+	
+	<select id="movieList" resultType="com.campus.movie.vo.MovieVO">
+		select * from movie order by reservationrate desc limit 3
+	</select>
+	<select id="movieSelct" resultType="com.campus.movie.vo.MovieVO">
+		select * from movie where movie_id=${param1}
+	</select>
+	
+	<select id="theaterSelct" resultType="com.campus.movie.vo.TheaterVO">
+		select * from theater where theater_id=${param1}
+	</select>
 </mapper>

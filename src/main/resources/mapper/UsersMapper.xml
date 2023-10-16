@@ -6,4 +6,7 @@
 	<select id="loginSelect" resultType="com.campus.movie.vo.UsersVO">
 		select userid, username from users where userid=#{param1} and userpwd=#{param2}
 	</select>
+	<select id="movieloginSelect" resultType="com.campus.movie.vo.UserVO">
+		select id, name from user where id=#{param1} and pw=#{param2}
+	</select>
 </mapper>

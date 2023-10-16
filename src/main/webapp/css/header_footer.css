@@ -185,14 +185,17 @@
 #header__login__icon {
   font-size: 30px;
 
+  background: white;
   border: 1px solid #020715;
   border-radius: 50%;
   width: 32px;
   height: 32px;
 
   /* 로그인 이미지 넣는곳? */
+  background-image: url("");
   background-size: cover;
-  background: white url("") no-repeat center;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* ================ 푸터 ================ */
@@ -209,7 +212,7 @@
   flex-shrink: 0;
 
   margin-top: 50px;
-  padding: 20px 0;
+  padding: 20px 0px;
 }
 
 .footer__wrap {
@@ -360,7 +363,7 @@
 
 /* 카테고리에 마우스 올리면 나오는 세부박스  */
 #header_gnb_bar {
-  width: 100%;
+  width: 3000px;
   background-color: var(--point-color);
   opacity: 0.8;
 

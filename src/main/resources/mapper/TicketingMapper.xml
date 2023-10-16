@@ -3,5 +3,43 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.campus.movie.mapper.TicketingMapper">
-
+	<select id="getShowing" resultType="com.campus.movie.vo.ShowingVO">
+		select show_id,screen_id,theater_id, movie_id, show_date, date_format(show_start,'%H:%i') show_start,date_format(show_end,'%H:%i') show_end, reservation_status 
+		 from showing where show_id=${param1}
+	</select>
+	
+	<select id="getMovie" resultType="com.campus.movie.vo.MovieVO">
+		select movie_id, movie_name, director, actor, runtime, show_date, genre,synopsis,poster_url,trailer_url,rating,reservationrate,audience_sum
+		 from movie where movie_id=${param1}
+	</select>
+	
+	<select id="getTheater" resultType="com.campus.movie.vo.TheaterVO">
+		select theater_id, theater_name, region, theater_detail, loca_x loca_y, total_seat
+		 from theater where theater_id=${param1}
+	</select>
+	
+	<select id="movieloginSelect" resultType="com.campus.movie.vo.UserVO">
+		select id, name, no from user where id=#{param1} 
+	</select>
+	
+	<insert id="reservationInsert">
+		insert into reservation(seat,movie_id,screen_id,no,price,nomal,child,senior,method)
+		 values(#{seat},${movie_id},${screen_id},${no},${price},${nomal},${child},${senior},#{method})
+	</insert>
+	
+	<select id="reservationSelect" resultType="com.campus.movie.vo.ReservationVO">
+		select * from reservation where screen_id=${screen_id} and seat=#{seat} and movie_id=${movie_id}
+	</select>
+	
+	<insert id="seatInsert">
+		insert into seat(show_id,reservation_id,reserv_seat)
+		 values(${param1}, ${param2}, #{param3})
+	</insert>
+	
+	<select id="getMovieList4" resultType="com.campus.movie.vo.MovieVO">
+		select * from movie order by reservationrate desc limit 4
+	</select>
+	
+	
+	
 </mapper>

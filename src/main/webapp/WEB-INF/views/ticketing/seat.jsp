@@ -243,7 +243,8 @@
       }
     </style>
     
-        <div class="container" id="seat_con">
+    
+     <div class="container" id="seat_con">
       <h1>상영관/좌석선택</h1>
       <div id="movie_ticketing_name">
         <div id="movie_ticketing_name_top">
@@ -260,173 +261,172 @@
           <div id="screen">screen</div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">A1</button>
-            <button class="seat-button">A2</button>
-            <button class="seat-button">A3</button>
-            <button class="seat-button" style="margin-right: 30px">A4</button>
+            <button class="seat-button" id="A1" >A1</button>
+            <button class="seat-button" id="A2">A2</button>
+            <button class="seat-button" id="A3">A3</button>
+            <button class="seat-button" style="margin-right: 30px" id="A4">A4</button>
 
-            <button class="seat-button">A5</button>
-            <button class="seat-button">A6</button>
-            <button class="seat-button">A7</button>
-            <button class="seat-button">A8</button>
-            <button class="seat-button">A9</button>
-            <button class="seat-button" style="margin-right: 30px">A10</button>
+            <button class="seat-button" id="A5">A5</button>
+            <button class="seat-button" id="A6">A6</button>
+            <button class="seat-button" id="A7">A7</button>
+            <button class="seat-button" id="A8">A8</button>
+            <button class="seat-button" id="A9">A9</button>
+            <button class="seat-button" style="margin-right: 30px" id="A10">A10</button>
 
-            <button class="seat-button">A11</button>
-            <button class="seat-button">A12</button>
-            <button class="seat-button">A13</button>
+            <button class="seat-button" id="A11">A11</button>
+            <button class="seat-button" id="A12">A12</button>
+            <button class="seat-button" id="A13">A13</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">B1</button>
-            <button class="seat-button">B2</button>
-            <button class="seat-button">B3</button>
-            <button class="seat-button" style="margin-right: 30px">A4</button>
-            <button class="seat-button">B5</button>
-            <button class="seat-button">B6</button>
-            <button class="seat-button">B7</button>
-            <button class="seat-button">B8</button>
-            <button class="seat-button">B9</button>
-            <button class="seat-button" style="margin-right: 30px">B10</button>
-            <button class="seat-button">B11</button>
-            <button class="seat-button">B12</button>
-            <button class="seat-button">B12</button>
+            <button class="seat-button" id="B1">B1</button>
+            <button class="seat-button" id="B2">B2</button>
+            <button class="seat-button" id="B3">B3</button>
+            <button class="seat-button" id="B4" style="margin-right: 30px">B4</button>
+            <button class="seat-button" id="B5">B5</button>
+            <button class="seat-button" id="B6">B6</button>
+            <button class="seat-button" id="B7">B7</button>
+            <button class="seat-button" id="B8">B8</button>
+            <button class="seat-button" id="B9">B9</button>
+            <button class="seat-button" id="B10" style="margin-right: 30px">B10</button>
+            <button class="seat-button" id="B11">B11</button>
+            <button class="seat-button" id="B12">B12</button>
+            <button class="seat-button" id="B13">B13</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">C1</button>
-            <button class="seat-button">C2</button>
-            <button class="seat-button">C3</button>
-            <button class="seat-button" style="margin-right: 30px">C4</button>
-            <button class="seat-button">C5</button>
-            <button class="seat-button">C6</button>
-            <button class="seat-button">C7</button>
-            <button class="seat-button">C8</button>
-            <button class="seat-button">C9</button>
-            <button class="seat-button" style="margin-right: 30px">C10</button>
-            <button class="seat-button">C11</button>
-            <button class="seat-button">C12</button>
-            <button class="seat-button">C12</button>
+            <button class="seat-button" id="C1">C1</button>
+            <button class="seat-button" id="C2">C2</button>
+            <button class="seat-button" id="C3">C3</button>
+            <button class="seat-button" id="C4" style="margin-right: 30px">C4</button>
+            <button class="seat-button" id="C5">C5</button>
+            <button class="seat-button" id="C6">C6</button>
+            <button class="seat-button" id="C7">C7</button>
+            <button class="seat-button" id="C8">C8</button>
+            <button class="seat-button" id="C9">C9</button>
+            <button class="seat-button" id="C10" style="margin-right: 30px">C10</button>
+            <button class="seat-button" id="C11">C11</button>
+            <button class="seat-button" id="C12">C12</button>
+            <button class="seat-button" id="C13">C13</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">D1</button>
-            <button class="seat-button">D2</button>
-            <button class="seat-button">D3</button>
-            <button class="seat-button" style="margin-right: 30px">D4</button>
-            <button class="seat-button">D5</button>
-            <button class="seat-button">D6</button>
-            <button class="seat-button">D7</button>
-            <button class="seat-button">D8</button>
-            <button class="seat-button">D9</button>
-            <button class="seat-button" style="margin-right: 30px">D10</button>
-            <button class="seat-button">D11</button>
-            <button class="seat-button">D12</button>
-            <button class="seat-button">D13</button>
+            <button class="seat-button" id="D1">D1</button>
+            <button class="seat-button" id="D2">D2</button>
+            <button class="seat-button" id="D3">D3</button>
+            <button class="seat-button" id="D4" style="margin-right: 30px">D4</button>
+            <button class="seat-button" id="D5">D5</button>
+            <button class="seat-button" id="D6">D6</button>
+            <button class="seat-button" id="D7">D7</button>
+            <button class="seat-button" id="D8">D8</button>
+            <button class="seat-button" id="D9">D9</button>
+            <button class="seat-button" id="D10" style="margin-right: 30px">D10</button>
+            <button class="seat-button" id="D11">D11</button>
+            <button class="seat-button" id="D12">D12</button>
+            <button class="seat-button" id="D13">D13</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">E1</button>
-            <button class="seat-button">E2</button>
-            <button class="seat-button">E3</button>
-            <button class="seat-button" style="margin-right: 30px">E4</button>
-            <button class="seat-button">E5</button>
-            <button class="seat-button">E6</button>
-            <button class="seat-button">E7</button>
-            <button class="seat-button">E8</button>
-            <button class="seat-button">E9</button>
-            <button class="seat-button" style="margin-right: 30px">E10</button>
-            <button class="seat-button">E11</button>
-            <button class="seat-button">E12</button>
-            <button class="seat-button">E13</button>
+            <button class="seat-button" id="E1">E1</button>
+            <button class="seat-button" id="E2">E2</button>
+            <button class="seat-button" id="E3">E3</button>
+            <button class="seat-button" id="E4" style="margin-right: 30px">E4</button>
+            <button class="seat-button" id="E5">E5</button>
+            <button class="seat-button" id="E6">E6</button>
+            <button class="seat-button" id="E7">E7</button>
+            <button class="seat-button" id="E8">E8</button>
+            <button class="seat-button" id="E9">E9</button>
+            <button class="seat-button" id="E10" style="margin-right: 30px">E10</button>
+            <button class="seat-button" id="E11">E11</button>
+            <button class="seat-button" id="E12">E12</button>
+            <button class="seat-button" id="E13">E13</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">F1</button>
-            <button class="seat-button">F2</button>
-            <button class="seat-button">F3</button>
-            <button class="seat-button" style="margin-right: 30px">F4</button>
-            <button class="seat-button">F5</button>
-            <button class="seat-button">F6</button>
-            <button class="seat-button">F7</button>
-            <button class="seat-button">F8</button>
-            <button class="seat-button">F9</button>
-            <button class="seat-button" style="margin-right: 30px">F10</button>
-            <button class="seat-button">F11</button>
-            <button class="seat-button">F12</button>
-            <button class="seat-button">F13</button>
+            <button class="seat-button" id="F1">F1</button>
+            <button class="seat-button" id="F2">F2</button>
+            <button class="seat-button" id="F3">F3</button>
+            <button class="seat-button" id="F4" style="margin-right: 30px">F4</button>
+            <button class="seat-button" id="F5">F5</button>
+            <button class="seat-button" id="F6">F6</button>
+            <button class="seat-button" id="F7">F7</button>
+            <button class="seat-button" id="F8">F8</button>
+            <button class="seat-button" id="F9">F9</button>
+            <button class="seat-button" id="F10" style="margin-right: 30px">F10</button>
+            <button class="seat-button" id="F11">F11</button>
+            <button class="seat-button" id="F12">F12</button>
+            <button class="seat-button" id="F13">F13</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">G1</button>
-            <button class="seat-button">G2</button>
-            <button class="seat-button">G3</button>
-            <button class="seat-button" style="margin-right: 30px">G4</button>
-            <button class="seat-button">G5</button>
-            <button class="seat-button">G6</button>
-            <button class="seat-button">G7</button>
-            <button class="seat-button">G8</button>
-            <button class="seat-button">G9</button>
-            <button class="seat-button" style="margin-right: 30px">G10</button>
-            <button class="seat-button">G11</button>
-            <button class="seat-button">G12</button>
-            <button class="seat-button">G13</button>
+            <button class="seat-button" id="G1">G1</button>
+            <button class="seat-button" id="G2">G2</button>
+            <button class="seat-button" id="G3">G3</button>
+            <button class="seat-button" id="G4" style="margin-right: 30px">G4</button>
+            <button class="seat-button" id="G5">G5</button>
+            <button class="seat-button" id="G6">G6</button>
+            <button class="seat-button" id="G7">G7</button>
+            <button class="seat-button" id="G8">G8</button>
+            <button class="seat-button" id="G9">G9</button>
+            <button class="seat-button" id="G10" style="margin-right: 30px">G10</button>
+            <button class="seat-button" id="G11">G11</button>
+            <button class="seat-button" id="G12">G12</button>
+            <button class="seat-button" id="G13">G13</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">H1</button>
-            <button class="seat-button">H2</button>
-            <button class="seat-button">H3</button>
-            <button class="seat-button" style="margin-right: 30px">H4</button>
-            <button class="seat-button">H5</button>
-            <button class="seat-button">H6</button>
-            <button class="seat-button">H7</button>
-            <button class="seat-button">H8</button>
-            <button class="seat-button">H9</button>
-            <button class="seat-button" style="margin-right: 30px">H10</button>
-            <button class="seat-button">H11</button>
-            <button class="seat-button">H12</button>
-            <button class="seat-button">H13</button>
+            <button class="seat-button" id="H1">H1</button>
+            <button class="seat-button" id="H2">H2</button>
+            <button class="seat-button" id="H3">H3</button>
+            <button class="seat-button" id="H4" style="margin-right: 30px">H4</button>
+            <button class="seat-button" id="H5">H5</button>
+            <button class="seat-button" id="H6">H6</button>
+            <button class="seat-button" id="H7">H7</button>
+            <button class="seat-button" id="H8">H8</button>
+            <button class="seat-button" id="H9">H9</button>
+            <button class="seat-button" id="H10" style="margin-right: 30px">H10</button>
+            <button class="seat-button" id="H11">H11</button>
+            <button class="seat-button" id="H12">H12</button>
+            <button class="seat-button" id="H13">H13</button>
           </div>
           <br />
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">I1</button>
-            <button class="seat-button">I2</button>
-            <button class="seat-button">I3</button>
-            <button class="seat-button" style="margin-right: 30px">I4</button>
-            <button class="seat-button">I5</button>
-            <button class="seat-button">I6</button>
-            <button class="seat-button">I7</button>
-            <button class="seat-button">I8</button>
-            <button class="seat-button">I9</button>
-            <button class="seat-button" style="margin-right: 30px">I10</button>
-            <button class="seat-button">I11</button>
-            <button class="seat-button">I12</button>
+            <button class="seat-button" id="I1">I1</button>
+            <button class="seat-button" id="I2">I2</button>
+            <button class="seat-button" id="I3">I3</button>
+            <button class="seat-button" id="I4" style="margin-right: 30px">I4</button>
+            <button class="seat-button" id="I5">I5</button>
+            <button class="seat-button" id="I6">I6</button>
+            <button class="seat-button" id="I7">I7</button>
+            <button class="seat-button" id="I8">I8</button>
+            <button class="seat-button" id="I9">I9</button>
+            <button class="seat-button" id="I10" style="margin-right: 30px">I10</button>
+            <button class="seat-button" id="I11">I11</button>
+            <button class="seat-button" id="I12">I12</button>
           </div>
           <div>
             <!-- 좌석 버튼 -->
-            <button class="seat-button">J1</button>
-            <button class="seat-button">J2</button>
-            <button class="seat-button">J3</button>
-            <button class="seat-button" style="margin-right: 30px">J4</button>
-            <button class="seat-button">J5</button>
-            <button class="seat-button">J6</button>
-            <button class="seat-button">J7</button>
-            <button class="seat-button">J8</button>
-            <button class="seat-button">J9</button>
-            <button class="seat-button">J10</button>
-            <button class="seat-button">J11</button>
-            <button class="seat-button">J12</button>
+            <button class="seat-button" id="J1">J1</button>
+            <button class="seat-button" id="J2">J2</button>
+            <button class="seat-button" id="J3">J3</button>
+            <button class="seat-button" id="J4" style="margin-right: 30px">J4</button>
+            <button class="seat-button" id="J5">J5</button>
+            <button class="seat-button" id="J6">J6</button>
+            <button class="seat-button" id="J7">J7</button>
+            <button class="seat-button" id="J8">J8</button>
+            <button class="seat-button" id="J9">J9</button>
+            <button class="seat-button" id="J10">J10</button>
+            <button class="seat-button" id="J11">J11</button>
+            <button class="seat-button" id="J12">J12</button>
           </div>
         </div>
       </div>
 
       <div id="movie_person_select">
         <div id="person_sel_poster_wrap">
-          <p id="person_sel_insert_poster">
+          	<img id="person_sel_insert_poster" src="${mVO.poster_url }">
             <!-- 포스터삽입용부분입니다 : JS -->
-          </p>
         </div>
         <div id="movie_person_sel_left">
           <span id="selected-seats">좌석선택</span>
@@ -461,7 +461,7 @@
           </div>
         </div>
         <div class="count-wrap_count">
-          <p>오펜하이머</p>
+          <p>${mVO.movie_name}</p>
           <p>180분</p>
           <p>2023. 09. 04 월요일</p>
           <p>00:00 ~ 00:00</p>
@@ -471,15 +471,95 @@
           <p id="seat_price">12,000원</p>
         </div>
       </div>
+      <script>
+      function selectCheck(){
+  		if(document.getElementById("movieseats").value==""){
+  			alert("좌석를 선택 하세요..");
+  			return false;
+  		}
+  		if(document.getElementById("movieprice").value==""){
+  			alert("인원을 선택하세요..");
+  			return false;
+  		}
+  		return true;
+  	   }
+      </script>
+      <form  method="post" action="${pageContext.servletContext.contextPath}/ticketing/payment" onsubmit="return selectCheck()">
+      
+      <input
+            type="hidden"
+            id="show_id"
+            value="${sVO.show_id }"
+             name="show_id"
+       />
+      <input
+            type="hidden"
+            id="movieseats"
+            value=""
+             name="movieseats"
+       />
+        <input
+            type="hidden"
+            id="movieprice"
+            value=""
+             name="movieprice"
+       />
+       
+       <input
+            type="hidden"
+            id="normal_input"
+            value=""
+             name="normal_input"
+       />
+       <input
+            type="hidden"
+            id="child_input"
+            value=""
+             name="child_input"
+       />
+       <input
+            type="hidden"
+            id="senior_input"
+            value=""
+             name="senior_input"
+       />
+      
+      <input
+            id="movie_ticketing_seat_pay_btn"
+            type="submit"
+            name="reg"
+            value="결제하기"
+          />
+      </form>
 
-      <button id="movie_ticketing_seat_pay_btn">
-        <a href="./payment.html">결제하기</a>
-      </button>
     </div>
     
-        <section id="footer"></section>
 
-    <script>
+<script>
+   		$(function(){
+   		 	//if($(".seat-button").text()==);
+   		 	
+   		 	//$(".seat-button").attr("value",$(this).text());
+   		});
+    </script>
+
+<script>
+    $(function(){
+		let seatlist=[];
+ 		<c:forEach var="stVO" items="${seatlist}">	 
+ 		seatlist.push("${stVO.reserv_seat}");
+ 		</c:forEach>
+ 		for(var i=0;i<seatlist.length;i++){
+ 			console.log(seatlist[i]);
+ 			$("#"+seatlist[i]).attr("disabled","disabled");
+ 			/* if($(".seat-button").attr("id")==seatlist[i]){
+ 				$(this).attr("disabled","disabled");
+ 				console.log($(this).text()+"--");
+ 			} */
+ 		}
+		
+	})
+    	
       $(document).ready(function () {
         var selectedSeats = [];
         var selectedTotal = 0;
@@ -516,6 +596,7 @@
 
           // 선택된 좌석과 인원 수를 업데이트
           $("#selected-seats").text("좌석선택: " + selectedSeats.join(", "));
+          $("#movieseats").attr("value",selectedSeats.join(","));
           $("#selected-total").text("총인원: " + selectedTotal + "명");
           currentQuantity = selectedTotal;
           if (
@@ -571,9 +652,10 @@
               } else {
                 seniorQuantity = num;
               }
-
+			
               calc();
             }
+           
           },
         });
 
@@ -583,6 +665,10 @@
             childPrice * childQuantity +
             seniorPrice * seniorQuantity;
           $("#seat_price").text("결제 예정금액: " + totalAmount + "원");
+          $("#normal_input").attr("value",normalQuantity);
+          $("#child_input").attr("value",childQuantity);
+          $("#senior_input").attr("value",seniorQuantity);
+          $("#movieprice").attr("value",totalAmount);
         }
 
         // 초기 계산 호출

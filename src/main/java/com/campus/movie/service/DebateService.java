@@ -1,5 +1,9 @@
 package com.campus.movie.service;
 
-public interface DebateService {
+import java.util.List;
 
+import com.campus.movie.vo.MovieVO;
+
+public interface DebateService {
+	public List<MovieVO> movieList();
 }

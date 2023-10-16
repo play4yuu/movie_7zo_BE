@@ -213,26 +213,26 @@
         <div id="payment_top_left">
           <a href="#">
             <img
-              src="https://i.namu.wiki/i/pMVIi7MS6YW04Gxkx-OGH1_PE5T7O4G5ti4N-INH0eMVplAAk6cxGSiHkn0-GfSKfC1nMTR40VmE6f7z8TQGvFX-Hf3_0RzMgIeh7XvW-MKmO9FvQGhYB1GhnouNSj45C76zxgKRCP5ByesV6q8_DQ.webp"
+              src="${mvo.poster_url} "
               id="mv1"
           /></a>
         </div>
 
         <div id="payment_top_right">
           <div id="payment_top__title">
-            <p>오펜하이머</p>
-            <p>180분</p>
+            <p>${mvo.movie_name }</p>
+            <p>${mvo.runtime }분</p>
           </div>
 
-          <p>2023. 09. 09 (토)</p>
-          <p>16:00 ~ 18:00</p>
-          <p>CGV용산 / 홍길동 3관</p>
+          <p>${svo.show_date }</p>
+          <p>${svo.show_start } ~ ${svo.show_end } </p>
+          <p>CGV${tvo.theater_name } / 3관</p>
 
           <p>성인 1명</p>
 
           <div id="payment_top_right_right">
             <p>결제 예정금액</p>
-            <p>12,000원</p>
+            <p>${apVO.movieprice }원</p>
           </div>
         </div>
 
@@ -247,15 +247,94 @@
         </div>
 
         <div id="mayment_sel__wrap">
-          <button type="radio" class="paymunt_sel">
-            <span class="material-icons"> credit_card </span>
+          <button type="radio" class="paymunt_sel" id="card">
+            <span class="material-icons">credit_card </span>
           </button>
-          <button type="radio" class="paymunt_sel">
-            <span class="material-icons"> account_balance_wallet </span>
+          <button type="radio" class="paymunt_sel" id="account">
+            <span class="material-icons">account_balance_wallet </span>
           </button>
         </div>
 
-        <button id="payment_btn">결제하기</button>
+       	<form  method="post" action="${pageContext.servletContext.contextPath}/ticketing/bookingCon" onsubmit="return selectCheck()">
+			 
+			 <input
+            type="hidden"
+            id="seat"
+            value="${apVO.movieseats }"
+             name="seat"
+       		/>
+       		<input
+            type="hidden"
+            id="movie_id"
+            value="${svo.movie_id }"
+             name="movie_id"
+       		/>
+       		<input
+            type="hidden"
+            id="screen_id"
+            value="${svo.screen_id }"
+             name="screen_id"
+       		/>
+       		<input
+            type="hidden"
+            id="id"
+            value="${id }"
+             name="id"
+       		/>
+       		<input
+            type="hidden"
+            id="price"
+            value="${apVO.movieprice }"
+             name="price"
+       		/>
+       		<input
+            type="hidden"
+            id="nomal"
+            value="${apVO.normal_input }"
+             name="nomal"
+       		/>
+       		<input
+            type="hidden"
+            id="child"
+            value="${apVO.child_input }"
+             name="child"
+       		/>
+       		<input
+            type="hidden"
+            id="senior"
+            value="${apVO.senior_input }"
+             name="senior"
+       		/>
+       		<input
+            type="hidden"
+            id="method"
+            value=""
+             name="method"
+       		/>
+       		<input
+            type="hidden"
+            id="show_id"
+            value="${svo.show_id }"
+             name="show_id"
+       		/>
+       		
+       		<input
+            id="payment_btn"
+            type="submit"
+            name="reg"
+            value="결제하기"
+          />	
+		</form>
+		<script>
+      function selectCheck(){
+  		if(document.getElementById("method").value==""){
+  			alert("결제수단을 선택 하세요..");
+  			return false;
+  		}
+  		 alert("결제가 완료되었습니다");
+  		return true;
+  	   }
+      </script>
 
         <!-- 아직은 서버안써써 발표용으로 지워놨습니다 -->
         <!-- <form
@@ -269,20 +348,7 @@
       </div>
     </div>
 
-    <!-- FOOTER 건들지마세요 -->
-    <section id="footer">
-      <div class="footer__wrap">
-        <h1 class="footer__logo">
-          <span class="material-icons" id="footer__logo"> movie_creation </span>
-        </h1>
 
-        <div class="footer__text">
-          <span class="bold">영화나보죠</span>
-          <span>사업자 등록번호 : 000-00-00000</span>
-          <span>소재지 : 경기도 어쩌구 저쩌구 저쩌구저쩌구</span>
-        </div>
-      </div>
-    </section>
 
     <script>
       const btns = document.getElementsByClassName("paymunt_sel");
@@ -291,16 +357,19 @@
         btns[i].addEventListener("click", function () {
           this.style.backgroundColor = "#404040";
           this.style.color = "white";
+         
           for (let j = 0; j < btns.length; j++) {
             if (j !== i) {
               btns[j].style.backgroundColor = "";
               btns[j].style.color = "";
             }
           }
+          $("#method").attr("value",$(this).attr("id"));
         });
       }
 
-      const payment_btn = document.getElementById("payment_btn");
+      
+/*       const payment_btn = document.getElementById("payment_btn");
       payment_btn.addEventListener("click", function () {
         //btns가 선택되어있는지 확인
         let check = false;
@@ -311,8 +380,9 @@
         }
 
         alert("결제가 완료되었습니다");
-        location.href = "./booking_con.html";
-      });
+        location.href = "/ticketing/bookingCon";
+      }); */
+      
     </script>
     
     

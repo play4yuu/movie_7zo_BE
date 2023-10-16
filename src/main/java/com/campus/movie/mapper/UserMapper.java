@@ -19,7 +19,7 @@ public interface UserMapper {
     String findId(String name, String email);
 
     //PW찾기 ( 필요정보 : id, 휴대전화, 이메일 )
-    String findPw(String id, String phone, String email);
+    String findPw(String name, String phone, String email);
 
     UserVO join(String id, String pw, String nickname, String name, String phone, String email);
 

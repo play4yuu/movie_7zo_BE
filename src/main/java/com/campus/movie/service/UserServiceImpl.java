@@ -39,8 +39,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String findPw(String id, String phone, String email) {
-        return mapper.findPw(id, phone, email);
+    public String findPw(String name, String phone, String email) {
+        return mapper.findPw(name, phone, email);
     }
 
     @Override

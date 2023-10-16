@@ -12,5 +12,4 @@ public class ShowingVO {
 	private String show_date;
 	private String show_start;
 	private String show_end;
-
 }

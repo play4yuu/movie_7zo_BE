@@ -166,7 +166,28 @@
       }
     </style>
     
-       <script>
+ 	<script>
+ 		
+ 	</script>
+ 	
+ 	<script>
+		$(function(){
+			let list=[];
+	 		<c:forEach var="sVO" items="${slist}">	 
+	 			list.push("${sVO.show_start}");
+	 		</c:forEach>
+	 		for(var i=0;i<list.length;i++){
+	 			console.log(list[i]+"kk");
+	 			console.log("-----");
+	 		}
+			console.log(list[0]);
+			
+		})
+ 	
+ 	</script>
+    
+   <script>
+
       /*
 		$(".movie_schedule_time_obj").onmouseenter=function(){
 			this.css("background-color","var(--point-color)");
@@ -266,38 +287,51 @@
     
         <div class="container">
       <div id="movie_schedule_main">
-        <div id="movie_schedule_main_name">이수점 상영관 정보</div>
+        <div id="movie_schedule_main_name">${tVO.theater_name}  상영관 정보</div>
         <div id="cal_view"></div>
         <div>
           <!-- 경계선 밑 영화 1개당 포스터와 좌석정보-->
           <div class="movie_schedule_obj" id="movie_schedule_movie">
-            <img src="img/oppenheimer.jpg" class="movie_schedule_obj_poster" />
+            <img src="${mVO.poster_url} " class="movie_schedule_obj_poster" />
             <div class="movie_schedule_obj_1">
               <div class="movie_schedule_obj_2">
                 <div class="movie_schedule_obj_3">2D</div>
                 <ul class="movie_schedule_time">
-                  <li
-                    class="movie_schedule_time_obj"
-                    onclick="window.open('../TICKETING/seat.html')"
-                  >
-                    <div>1관</div>
-                    <div>08:00 ~ 10:00</div>
-                    <div>132석</div>
+                
+          <!-- 내가만든 것 -->      
+          		<c:if test="${mnum >0}">
+          			<div>만들어짐</div>
+          		</c:if>
+          		
+          		
+            	<c:forEach var="sVO" items="${slist}">	 
+                  <li class="movie_schedule_time_obj"
+                   onclick="location.href='${pageContext.servletContext.contextPath}/ticketing/seat?show_id=${sVO.show_id}&movie_id=${sVO.movie_id}'">
+                    <div>from db</div>
+                    <div>${sVO.screen_id } 관</div>
+                    <div>${sVO.show_start} ~ ${sVO.show_end}</div>
+                    <div>${sVO.reservation_status} 석</div>
                   </li>
+				</c:forEach>
+				
+                  
                   <li
                     class="movie_schedule_time_obj"
                     onclick="window.open('../ticketing/seat.html')"
                   >
-                    <div>1관</div>
+                    <div>1관 ${mnum } ${tnum }</div>
                     <div>08:00 ~ 10:00</div>
                     <div>132석</div>
                   </li>
+                  
+                  
                 </ul>
               </div>
               <!--hr class="hrstyle""/-->
               <div class="movie_schedule_obj_2">
                 <div class="movie_schedule_obj_3">3D</div>
                 <ul class="movie_schedule_time">
+                 
                   <li
                     class="movie_schedule_time_obj"
                     onclick="window.open('../ticketing/seat.html')"
@@ -306,6 +340,7 @@
                     <div>08:00 ~ 10:00</div>
                     <div>132석</div>
                   </li>
+                  
                   <li
                     class="movie_schedule_time_obj"
                     onclick="window.open('../ticketing/seat.html')"
@@ -314,6 +349,7 @@
                     <div>08:00 ~ 10:00</div>
                     <div>132석</div>
                   </li>
+                  
                   <li
                     class="movie_schedule_time_obj"
                     onclick="window.open('../ticketing/seat.html')"
@@ -591,5 +627,7 @@
         </div>
       </div>
     </div>
+    
+     
     
     

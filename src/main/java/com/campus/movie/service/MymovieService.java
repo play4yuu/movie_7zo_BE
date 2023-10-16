@@ -1,5 +1,10 @@
 package com.campus.movie.service;
 
-public interface MymovieService {
+import java.util.List;
 
+import com.campus.movie.vo.MovieVO;
+
+public interface MymovieService {
+	public MovieVO movieSelect(int no);
+	public List<MovieVO> getAllMovies();
 }

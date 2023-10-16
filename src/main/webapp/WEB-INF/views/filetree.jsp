@@ -65,8 +65,11 @@
         <a href="/movie/mymovie/search">
           <button class="btn">영화검색</button>
         </a>
-        <a href="/movie/mymovie/detail">
-          <button class="btn">영화상세정보</button>
+        <a href="/movie/mymovie/detail?no=2">
+          <button class="btn">영화상세정보no=2</button>
+        </a>
+        <a href="/movie/mymovie/detail?no=3">
+          <button class="btn">영화상세정보no=3</button>
         </a>
       </div>
 

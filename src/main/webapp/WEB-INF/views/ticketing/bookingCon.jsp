@@ -12,7 +12,7 @@
             <p id="comp__left__text__num">123-45678-90123</p>
           </div>
           <div id="comp__left__poster">
-            <div id="comp__left__poster__inner"></div>
+            <img  id="comp__left__poster__inner" src="${mVO.poster_url}">
           </div>
 
           <div class="comp__dot_top"></div>
@@ -27,37 +27,33 @@
 
             <li class="comp__light_text_wrap">
               <span class="comp__right__text__left"> 예매영화 </span>
-              <span class="comp__right__text__right">오펜하이머</span>
+              <span class="comp__right__text__right">${mVO.movie_name }</span>
             </li>
 
             <li class="comp__light_text_wrap">
               <span class="comp__right__text__left">관람극장/상영관 </span>
-              <span class="comp__right__text__right">CGV서울 / 홍길동 3관</span>
+              <span class="comp__right__text__right">CGV${tVO.theater_name } / 홍길동 ${sVO.screen_id}관</span>
             </li>
 
             <li class="comp__light_text_wrap">
               <span class="comp__right__text__left">관람일시 </span>
-              <span class="comp__right__text__right">관람인원</span>
+              <span class="comp__right__text__right">${sVO.show_date } ${sVO.show_start }~${sVO.show_end }</span>
             </li>
 
             <li class="comp__light_text_wrap">
               <span class="comp__right__text__left">관람인원 </span>
-              <span class="comp__right__text__right">성인 2명</span>
+              <span class="comp__right__text__right">${rVO.nomal+rVO.child+rVO.senior }명</span>
             </li>
 
             <li class="comp__light_text_wrap">
               <span class="comp__right__text__left">좌석번호 </span>
-              <span class="comp__right__text__right">1관 1열 1번</span>
+              <span class="comp__right__text__right">${rVO.seat}</span>
             </li>
 
-            <li class="comp__light_text_wrap">
-              <span class="comp__right__text__left">전화번호</span>
-              <span class="comp__right__text__right">010-1234-5678</span>
-            </li>
 
             <li class="comp__light_text_wrap">
               <span class="comp__right__text__left">결제금액 </span>
-              <span class="comp__right__text__right">16,000원</span>
+              <span class="comp__right__text__right">${rVO.price}원</span>
             </li>
           </div>
         </div>
@@ -66,10 +62,10 @@
 
     <div id="comp__btn-wrap">
       <button class="comp__btn" id="comp__btn_home">
-        <a href="../../index.html"> 홈으로 </a>
+        <a href="/movie/"> 홈으로 </a>
       </button>
       <button class="comp__btn" id="comp__btn_list">
-        <a href="../MYPAGE/movie_main.html"> 예매내역 </a>
+        <a href="/movie/mypage/movie_main"> 예매내역 </a>
       </button>
     </div>
     
