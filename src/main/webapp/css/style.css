@@ -149,6 +149,7 @@ a {
   height: 20px;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .main__movieList__rateBox {
@@ -177,6 +178,12 @@ a {
   border: none;
   border-radius: 5px;
   /* margin-left: 3px; */
+
+/*  FE make edit */
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ================== �븯�떒 �꽌釉뚮찓�돱諛� ================ */
@@ -248,5 +255,3 @@ a {
   background-color: rgba(192, 0, 0, 0.1);
   margin: 10px;
 }
-
-

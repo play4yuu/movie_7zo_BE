@@ -78,7 +78,7 @@
                            } */
 
       .seat-button {
-        display: inline-block;
+        display: inline-flex;
         /* margin: 10px; */
         width: 30px;
         height: 30px;
@@ -89,6 +89,8 @@
 
         font-size: 12px;
         text-align: center;
+        align-items: center;
+        justify-content: center;
       }
 
       #screen {
@@ -101,6 +103,8 @@
         border-radius: 5px;
         font-size: 24px;
         background-color: #2350bc;
+        display: flex;
+        justify-content: center;
 
         color: #fff;
       }

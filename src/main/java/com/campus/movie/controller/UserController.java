@@ -18,7 +18,7 @@ public class UserController {
     // == 구현해야 하는거 ==
     // 1.회원가입 v
     // 2.로그인 v
-    // 3.IDPW찾기
+    // 3.IDPW찾기 v
     // 4.아이디중복검사v, 닉네임중복검사v , 재입력창v
     // 5. 로그아웃 v
 

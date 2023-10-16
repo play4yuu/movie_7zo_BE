@@ -81,6 +81,7 @@ public class HomeController {
 	public String filetree( Model model) {		
 		return "filetree";
 	}
+
 	@RequestMapping(value = "/mypage/movie_main", method = RequestMethod.GET)
 	public String mypageMovieMain( Model model) {		
 		return "mypage/movie_main";
