@@ -1,6 +1,5 @@
 package com.campus.movie.controller;
 
-//유연주
 import com.campus.movie.service.UserService;
 import com.campus.movie.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,180 +8,203 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.Objects;
 
 @Controller
 public class UserController {
 
-	@Autowired
-	private UserService service;
+    @Autowired
+    private UserService service;
 
-	// == 援ы쁽�빐�빞 �븯�뒗嫄� ==
-	// 1.�쉶�썝媛��엯 v
-	// 2.濡쒓렇�씤 v
-	// 3.IDPW李얘린
-	// 4.�븘�씠�뵒以묐났寃��궗v, �땳�꽕�엫以묐났寃��궗v , �옱�엯�젰李퐒
-	// 5. 濡쒓렇�븘�썐 v
+    // == 구현해야 하는거 ==
+    // 1.회원가입 v
+    // 2.로그인 v
+    // 3.IDPW찾기
+    // 4.아이디중복검사v, 닉네임중복검사v , 재입력창v
+    // 5. 로그아웃 v
 
-	// ------------------------------------------------
+    // ------------------------------------------------
 
-	// 1. �쉶�썝媛��엯
-	// �쉶�썝媛��엯 �럹�씠吏� 留ㅽ븨
-	@GetMapping("/join")
-	public String insertUser() {
-		System.out.println("�쉶�썝媛��엯 �떎�뻾...");
-		return ("users/join");
-	}
+    //1. 회원가입
+    // 회원가입 페이지 매핑
+    @GetMapping("/join")
+    public String insertUser() {
+        System.out.println("회원가입 실행...");
+        return ("users/join");
+    }
 
-	// �쉶�썝媛��엯 �떎�뻾 + 泥댄겕
-	@RequestMapping("/users/joinChk")
-	public ModelAndView joinChk(UserVO vo) {
-		ModelAndView mv = new ModelAndView();
+    // 회원가입 실행 + 체크
+    @RequestMapping("/users/joinChk")
+    public ModelAndView joinChk(UserVO vo) {
+        ModelAndView mv = new ModelAndView();
 
-		try {
-			int joinResult = service.userInsert(vo);
-			System.out.println("�쉶�썝媛��엯 寃곌낵 : " + joinResult);
+        try {
+            int joinResult = service.userInsert(vo);
+            System.out.println("회원가입 결과 : " + joinResult);
 
-			if (joinResult > 0) {
-				System.out.println("�쉶�썝媛��엯 �꽦怨�!");
-				mv.setViewName("redirect:/");
+            if (joinResult > 0) {
+                System.out.println("회원가입 성공!");
+                mv.setViewName("redirect:/");
 
-			} else {
-				System.out.println("�쉶�썝媛��엯 �떎�뙣!");
-				mv.setViewName("users/joinFail");
-			}
+            } else {
+                System.out.println("회원가입 실패!");
+                mv.setViewName("users/joinFail");
+            }
 
-		} catch (Exception e) {
-			System.out.println("�쉶�썝媛��엯 �뿉�윭諛쒖깮" + e.getMessage());
-			e.printStackTrace();
-			mv.setViewName("users/joinFail");
-		}
+        } catch (Exception e) {
+            System.out.println("회원가입 에러발생" + e.getMessage());
+            e.printStackTrace();
+            mv.setViewName("users/joinFail");
+        }
 
-		return mv;
-	}
+        return mv;
+    }
 
-	// 2. 濡쒓렇�씤
-	@GetMapping("/login")
-	public String login() {
-		System.out.println("濡쒓렇�씤 �떎�뻾...");
-		return ("users/login");
-	}
 
-	// 2.1 濡쒓렇�씤 援ы쁽
-	@PostMapping("/loginchk")
-	public ModelAndView loginOK(String id, String pw, HttpSession session) {
-		System.out.println("濡쒓렇�씤 �떎�뻾以�...");
-		ModelAndView mv = new ModelAndView();
-		System.out.println("�뱾�뼱�삩 媛믫솗�씤 : " + id + " " + pw);
+    //2. 로그인
+    @GetMapping ("/login")
+    public String login() {
+        System.out.println("로그인 실행...");
+        return ("users/login");
+    }
 
-		// 濡쒓렇�씤 �떆�룄
-		try {
-			UserVO vo = service.login(id, pw);
+    //2.1 로그인 구현
+    @PostMapping ("/loginchk")
+    public ModelAndView loginOK(String id, String pw, HttpSession session) {
+        System.out.println("로그인 실행중...");
+        ModelAndView mv = new ModelAndView();
+        System.out.println("들어온 값확인 : " + id + " " + pw);
 
-			// 濡쒓렇�씤 �꽦怨�
-			if (vo != null) {
-				System.out.println("濡쒓렇�씤 �꽦怨� : " + vo.getId());
-				mv.setViewName("redirect:/");
-				session.setAttribute("id", vo.getId());
-				session.setAttribute("nickname", vo.getNickname());
-				session.setAttribute("logStatus", "Y");
+        //로그인 시도
+        try {
+            UserVO vo = service.login(id, pw);
 
-			} else {
-				// 濡쒓렇�씤 �떎�뙣
-				System.out.println("濡쒓렇�씤 �떎�뙣");
-				mv.setViewName("redirect:/");
-			}
-		} catch (Exception e) {
-			System.out.println("ERROR : " + e.getMessage());
-			e.printStackTrace();
-		}
-		return mv;
-	}
+            //로그인 성공
+            if ( vo != null ) {
+                System.out.println("로그인 성공 : " + vo.getId());
+                mv.setViewName("redirect:/");
+                session.setAttribute("id", vo.getId());
+                session.setAttribute("nickname", vo.getNickname());
 
-	// 3. ID/PW 李얘린
-	@GetMapping("/search")
-	public String search() {
-		System.out.println("�븘�씠�뵒/鍮꾨�踰덊샇 李얘린 �떎�뻾...");
-		// 留뚯빟 濡쒓렇�씤 以묒씠�씪硫� �뼱�뼸寃뚰빐�빞�븯吏�?
-		return ("users/search");
-	}
+            } else {
+                //로그인 실패
+                System.out.println("로그인 실패");
+                mv.setViewName("redirect:/");
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR : " + e.getMessage());
+            e.printStackTrace();
+        }
+        return mv;
+    }
 
-	// 3.1 ID 李얘린
-	@GetMapping("/searchResult")
-	public ModelAndView searchId(String name, String email) {
-		ModelAndView mv = new ModelAndView();
+    //3. ID/PW 찾기
+//    @GetMapping ("/search")
+//    public String search() {
+//        System.out.println("아이디/비밀번호 찾기 실행...");
+//        //만약 로그인 중이라면 어떻게해야하지?
+//        return ("users/search");
+//    }
 
-		mv.addObject("name", name);
-		mv.addObject("email", email);
+    //3.1 ID 찾기
+    @GetMapping ("/users/searchResult")
+    @ResponseBody
+    public ModelAndView searchId(String search_type, String name, String email, String phone, String id) {
+        ModelAndView mv = new ModelAndView();
 
-		System.out.println("李얘린 �떎�뻾以�...");
-		System.out.println("�뱾�뼱�삩 媛믫솗�씤 // �씠由� : " + name + "/ email : " + email);
+        mv.addObject("search_type", search_type);
 
-		String result_id = service.findId(name, email);
-		System.out.println("李얠� �븘�씠�뵒 : " + result_id);
-		mv.addObject("result_id", result_id);
+        if (search_type.equals("id")){
+            // 아이디 찾기
+            System.out.println("아이디 찾기");
+            mv.addObject("name", name);
+            mv.addObject("email", email);
 
-		mv.setViewName("users/searchResult");
+            System.out.println("들어온 값확인 // 이름 : " + name + "/ email : " + email);
 
-		return mv;
-	}
+            String resultID = service.findId(name, email);
+            System.out.println("찾은 아이디 : " + resultID);
+            mv.addObject("result_id", resultID);
 
-	// 3.2 PW 李얘린
 
-	// 4-1. �븘�씠�뵒 以묐났寃��궗 若�
-	@RequestMapping("/users/idchk")
-	public ModelAndView idchk(@RequestParam String id) {
-		ModelAndView mv = new ModelAndView();
-		System.out.println("�븘�씠�뵒 以묐났寃��궗 �떎�뻾以�...");
+        } else if(search_type.equals("pw")){
+            //비밀번호 찾기...
+            System.out.println("비밀번호 찾기");
 
-		try {
-			int result = service.idCheck(id);
-			System.out.println("id 以묐났寃��궗 : " + result);
+            mv.addObject("id", id);
+            mv.addObject("phone", phone);
+            mv.addObject("email", email);
 
-			mv.addObject("result", result);
+            System.out.println("들어온 값 : " + id + " " + phone + " " + email);
 
-		} catch (Exception e) {
-			System.out.println("ERROR : " + e.getMessage());
-			e.printStackTrace();
-		}
+            String resultPW = service.findPw(id, phone, email);
+            System.out.println("찾은 비밀번호" + resultPW);
+            mv.addObject("result_pw", resultPW);
 
-		mv.setViewName("users/idchk");
+        } else {
+            System.out.println("IDPW찾기 > 잘못된 접근");
+        }
 
-		mv.addObject("id", id);
-		System.out.println("id : " + id);
+        mv.setViewName("users/searchResult");
 
-		return mv;
+        return mv;
+    }
 
-	}
+    //3.2 PW 찾기
 
-	// 4-2. �땳�꽕�엫 以묐났寃��궗��若�
-	@RequestMapping("/users/nicknamechk")
-	public ModelAndView nicknamechk(@RequestParam String nickname) {
-		ModelAndView mv = new ModelAndView();
-		System.out.println("�땳�꽕�엫 以묐났寃��궗 �떎�뻾以�...");
+    //4-1. 아이디 중복검사 完
+    @RequestMapping ("/users/idchk")
+    public ModelAndView idchk(@RequestParam String id) {
+        ModelAndView mv = new ModelAndView();
+        System.out.println("아이디 중복검사 실행중...");
 
-		try {
-			int result = service.nickChk(nickname);
+        try {
+            int result = service.idCheck(id);
+            System.out.println("id 중복검사 : " + result);
 
-			System.out.println("nickname 以묐났寃��궗 : " + result);
-			mv.addObject("result", result);
-			mv.setViewName("users/nicknamechk");
-			mv.addObject("nickname", nickname);
+            mv.addObject("result", result);
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+        } catch (Exception e) {
+            System.out.println("ERROR : " + e.getMessage());
+            e.printStackTrace();
+        }
 
-		return mv;
+        mv.setViewName("users/idchk");
 
-	}
+        mv.addObject("id", id);
+        System.out.println("id : " + id);
 
-	// 5. 濡쒓렇�븘�썐
-	@RequestMapping("/users/logout")
-	public String logout(HttpSession session) {
-		System.out.println("濡쒓렇�븘�썐 �떎�뻾...");
-		session.invalidate();
-		return ("redirect:/");
-	}
+        return mv;
+
+    }
+
+    //4-2. 닉네임 중복검사　完
+    @RequestMapping ("/users/nicknamechk")
+    public ModelAndView nicknamechk(@RequestParam String nickname) {
+        ModelAndView mv = new ModelAndView();
+        System.out.println("닉네임 중복검사 실행중...");
+
+        try {
+            int result = service.nickChk(nickname);
+
+            System.out.println("nickname 중복검사 : " + result);
+            mv.addObject("result", result);
+            mv.setViewName("users/nicknamechk");
+            mv.addObject("nickname", nickname);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return mv;
+
+    }
+
+    //5. 로그아웃
+    @RequestMapping ("/users/logout")
+    public String logout(HttpSession session) {
+        System.out.println("로그아웃 실행...");
+        session.invalidate();
+        return ("redirect:/");
+    }
 
 }
