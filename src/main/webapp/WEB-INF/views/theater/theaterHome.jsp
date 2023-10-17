@@ -1,21 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-	
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpcK81AEpMVjsqTISn1mDiFpKmyvoWbjc&callback=initMap"async defer></script>
 
   	<script>
-		  $(document).on('click','.contents>span',function(){
-			$('#userid2').attr("value",$(this).attr('title'));
-			$("span[title ="+$('#userid2').val()+"]").css("border","5px solid var(--point-color) ").css("border-radius", "0.5rem");
-			$("span[title !="+$('#userid2').val()+"]").css("border","");
-		});
-	  </script>
+ 		  $(document).on('click','.contents>span',function(){
+ 			$('#userid2').attr("value",$(this).attr('title'));
+ 			$("span[title ="+$('#userid2').val()+"]").css("border","5px solid var(--point-color) ").css("border-radius", "0.5rem");
+ 			$("span[title !="+$('#userid2').val()+"]").css("border","");
+ 		});
+			
+	 </script>
 
 
 <div id="movie_ticketing_cinema">
 	<div id="movie_ticketing_name_top" >
-		<div id="movie_ticketing_name_title">영화관</div>
+		<div id="movie_ticketing_name_title">
+			<p>영화관</p>
+		</div>
 		<div id="movie_ticketing_name_top_search">
 			<input id="movie_ticketing_name_search_text" type="text"/>
 		</div>
@@ -46,7 +49,7 @@
 		<input type="radio" name="munu" id="m10" value="m10"/>
 		
 		<div class="contents">
-			<span title="gangnam"> 강남</span> | <span title="isu">이수</span> | <span title="gangbuk"> 강북 </span>
+			<span title="gangnam" id="1" value="1"> 강남</span> | <span title="isu" id="2" value="2">이수</span> | <span title="gangbuk" id="3" value="3"> 강북 </span>
 		</div >
 		<div class="contents">
 			<span title="seongnam"> 성남</span> | <span title="yangpyeong"> 양평 </span>
@@ -55,25 +58,25 @@
 			<span title="incheon"> 인천</span> | <span title="bupyeong"> 부평 </span>
 		</div>
 		<div class="contents">
-			<span title="chuncheon">춘천</span>
+			1111
 		</div>
 		<div class="contents">
-			<span title="yusung">유성</span> | <span title="seosan">서산</span>
+			222
 		</div>
 		<div class="contents">
-			<span title="dongsung">동성로</span>
+			333
 		</div>
 		<div class="contents">
-			<span title="choryang">초량</span> | <span title="ulsan">울산</span>
+			1111
 		</div>
 		<div class="contents">
-			<span title="masan">마산</span>
+			222
 		</div>
 		<div class="contents">
-			<span title="gusichung">구시청</span> | <span title="gunsan">군산</span>
+			333
 		</div>
 		<div class="contents">
-			<span title="jeju">제주</span>
+			101010
 		</div>
 	</div>
 </div>
@@ -82,16 +85,23 @@
 <!-- 극장안내 (누르면 나오는 부분) -->
 <div class="info-container">
 	<div class="theater_detail_title">
-		<p>강남점</p>
+	<c:forEach var="tVO" items="${theaters}">
+	<c:if test="${tVO.theater_id == 1}">
+		<p id="theaterName">${tVO.theater_name }</p>
+		</c:if>
+	</c:forEach>
 	</div>
 	
 	<div class="imgmap-container">
 		<div class="image-container">
 			<img src="https://img.cgv.co.kr/Theater/Theater/2014/1211/CGVgangnam.jpg" alt="극장 이미지" class="theater_detail_img" />
 			<div class="theater_detail_txt">
-				<p> 서울특별시 강남구 역삼동 어쩌구 지번주소 어쩌구</p>
-				<p> 서울특별시 강남구 강남대로 도로명숫자 (역삼동) </p>
-				<p> 1관 / 300석 </p>
+			<c:forEach var="tVO" items="${theaters}">
+			<c:if test="${tVO.theater_id == 1}">
+				<p> ${tVO.theater_detail } </p>
+				<p> 1관 / ${tVO.total_seat }석 </p>
+			</c:if>
+			</c:forEach>	
 			</div>
 		</div>
 		<div id="map-container"></div>
@@ -143,7 +153,6 @@
 		}
 		
 		document.querySelector('span[title="gangnam"]').addEventListener('click', function() {
-		    // 마커 위치 변경
 		    marker.setPosition(new google.maps.LatLng(37.123, 127.456));
 		
 		    const infoContainer = document.querySelector('.info-container', '.text-box');

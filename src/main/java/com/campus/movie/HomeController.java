@@ -40,10 +40,10 @@ public class HomeController {
 	public String theaterSchedule( Model model) {		
 		return "theater/schedule";
 	}
-	@RequestMapping(value = "/theater/theaterHome", method = RequestMethod.GET)
-	public String theaterTheaterHome( Model model) {		
-		return "theater/theaterHome";
-	}
+//	@RequestMapping(value = "/theater/theaterHome", method = RequestMethod.GET)
+//	public String theaterTheaterHome( Model model) {		
+//		return "theater/theaterHome";
+//	}
 	@RequestMapping(value = "/users/join", method = RequestMethod.GET)
 	public String usersJoin( Model model) {		
 		return "users/join";
